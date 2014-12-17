@@ -54,3 +54,9 @@ global.walk = function ( path, callback ) {
   else
     callback(path, stat);
 };
+
+global.MODULE_DIR = join(__dirname, '..');
+global.DIST_DIR = join(__dirname, '..', 'dist');
+global.EXAMPLES_DIR = join(__dirname, '..', 'examples');
+global.LIB_DIR = join(__dirname, '..', 'lib');
+global.SRC_DIR = join(__dirname, '..', 'src');
