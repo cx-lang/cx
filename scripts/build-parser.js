@@ -32,7 +32,7 @@ function preprocess ( input ) {
       if ( isDirectory ) {
         path = join(rootname, request);
         walk(path, function(filename, stat){
-          data += createOutput(filename, parseFile(filename, stat.dirname)) + "\n\n";
+          data += createOutput(filename, parseFile(filename, stat.dirname)) + "\n";
         });
       } else {
         data = parseFile(path, dirname(path));
