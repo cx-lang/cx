@@ -1,0 +1,7 @@
+dist
+examples
+src
+scripts
+Makefile
+npm-debug.log
+*.sublime-*

@@ -1,0 +1,9 @@
+dist
+examples/ast
+examples/cpp
+examples/js
+node_modules
+npm-debug.log
+lib/parser.js
+src/parser.pegjs
+*.sublime-*
