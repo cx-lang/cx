@@ -1,0 +1,40 @@
+{
+  "name": "cx",
+  "version": "0.0.0",
+  "description": "Provides a statistically dynamic language.",
+  "keywords": [
+    "cx",
+    "c++",
+    "parser",
+    "compiler",
+    "transpiler"
+  ],
+  "homepage": "https://erispa.github.io/cx",
+  "author": {
+    "name": "Futago-za Ryuu",
+    "email": "futagoza.ryuu@gmail.com",
+    "url": "https://erispa.github.io/"
+  },
+  "license": "MIT",
+  "main": "lib/cx.js",
+  "bin": {
+    "pegjs": "bin/cx"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/erispa/cx.git"
+  },
+  "bugs": {
+    "url": "https://github.com/erispa/cx/issues"
+  },
+  "devDependencies": {
+    "pegjs":         "git://github.com/pegjs/pegjs.git",
+    "uglifyjs":      "2.3.6"
+  },
+  "engines": {
+    "node": ">= 0.10.0"
+  }
+}
