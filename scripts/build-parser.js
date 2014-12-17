@@ -1,8 +1,5 @@
 require('./globals');
 
-var LIB_DIR = join(__dirname, '..', 'lib');
-var SRC_DIR = join(__dirname, '..', 'src');
-
 function preprocess ( input ) {
   var _included = [];
 
