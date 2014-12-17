@@ -1,6 +1,6 @@
 /*
   Copyright (c) 2014 Futago-za Ryuu <futagoza.ryuu@gmail.com>
-  https://github.com/futagoza/cx, v__VERSION__
+  https://github.com/erispa/cx, v__VERSION__
   
   Permission is hereby granted, free of charge, to any person obtaining a copy
   of this software and associated documentation files (the "Software"), to deal
