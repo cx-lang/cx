@@ -5,7 +5,7 @@ var modules = [];
 
 walk(LIB_DIR, function(filename, stat){
   modules.push(
-    "'" + filename.replace(LIB_DIR, '') + "': function ( require, exports, module ) {\n" + 
+    "'" + filename.replace(LIB_DIR, '') + "': function ( require, module, exports ) {\n" + 
       indent(readFile(filename)).replace(/require\s*?\(\s*?("|')(.*)("|')\s*?\)/g, function(m, openOp, request, closeOp, index){
         var location = 'require statement in "' + filename + '" at ' + index;
         if ( openOp !== closeOp ) {
