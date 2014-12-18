@@ -1,9 +1,9 @@
-RegularExpressionLiteral "RegularExpression"
-  = "/" chars:RegularExpressionCharacter* "/" flags:Flags? {
+RegExpLiteral "Regular Expression"
+  = "/" chars:RegExpCharacter* "/" flags:Flags? {
       return append({ type: "literal", kind: "RegularExpression", value: JSON.stringify(chars.join("")), flags: flags });
     }
 
-RegularExpressionCharacter
+RegExpCharacter
   = '\\' "/" { return "/"; }
   / !"/" SourceCharacter { return text(); }
 

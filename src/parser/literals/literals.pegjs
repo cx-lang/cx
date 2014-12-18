@@ -3,7 +3,7 @@ Literal
   / BooleanLiteral
   / NumericLiteral
   / StringLiteral
-  / RegularExpressionLiteral
+  / RegExpLiteral
 
 NullLiteral
   = NullToken { return append({ type: "literal", kind: "Null" }); }
