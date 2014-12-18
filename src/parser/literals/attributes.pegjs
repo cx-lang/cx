@@ -22,7 +22,7 @@ AttributeExpression
 
 Options
   = attributes:AttributeLiteral? __ types:(TypeName __)* {
-      return append({ type: 'attribute', kind: 'Declaration', attributes: attributes, types: extractOptional(types, 0) || [] });
+      return append({ type: 'attribute', kind: 'Options', attributes: attributes, types: extractOptional(types, 0) || [] });
     }
 
 TypeName
