@@ -1,6 +1,10 @@
 This is a programming language that can optionally transpile to any language you define.
 It is based on C++, C#, TypeScript, JavaScript, HTML/CSS and HaXe.
 
+Progress
+========
+You can track progress for types in (types.txt)[types.txt]
+
 Links
 =====
   
