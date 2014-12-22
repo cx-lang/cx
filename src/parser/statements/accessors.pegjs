@@ -1,11 +1,25 @@
 GetterBlock
-  = "(" __ ")" __ block:Block {
-      return { type: 'getter', body: block.body };
+  = ("(" __ ")" __)? block:Block {
+      return {
+        type: 'accessor',
+        kind: 'getter',
+        body: block.body
+      };
     }
 
 SetterBlock
-  = "(" __ param:FunctionArgument __ ")" __ block:Block {
-      return { type: 'setter', param: param, body: block.body };
+  = param:("(" __ FunctionArgument __ ")" __)? block:Block {
+      if ( param ) {
+        param = param[2];
+      } else {
+        param = { type: 'argument', key: 'value' };
+      }
+      return {
+        type: 'accessor',
+        kind: 'setter',
+        param: param,
+        body: block.body
+      };
     }
 
 GetterStatement
@@ -22,12 +36,14 @@ SetterStatement
 
 GetterProperty
   = GetToken __ key:PropertyName __ getter:GetterBlock {
+      getter.type = 'property';
       getter.identifier = key;
       return append(getter);
     }
 
 SetterProperty
   = SetToken __ key:PropertyName __ setter:SetterBlock {
+      getter.type = 'property';
       setter.identifier = key;
       return append(setter);
     }
