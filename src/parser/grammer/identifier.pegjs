@@ -12,9 +12,14 @@ IdentifierPath
     }
   / Identifier
 
-IdentifierList
-  = identifiers:(Identifier __)* {
+Identifiers
+  = identifiers:(IdentifierPath __)* {
       return identifiers ? identifiers[0] : [];
+    }
+
+IdentifierList
+  = first:IdentifierPath rest:(__ "," __ IdentifierPath)* {
+      return buildList(first, rest, 3);
     }
 
 IdentifierStart
