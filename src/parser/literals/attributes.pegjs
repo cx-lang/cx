@@ -16,7 +16,7 @@ AttributeAssignment
     }
 
 AttributeExpression
-  = "@[" __ properties:PropertyList __ "]" {
+  = "@[" __ properties:PropertyItemList __ "]" {
       return append({ type: 'attribute', kind:'Object', properties: properties });
     }
 
