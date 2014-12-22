@@ -3,7 +3,7 @@ It is based on C++, C#, TypeScript, JavaScript, HTML/CSS and HaXe.
 
 Progress
 ========
-You can track progress for types in [types.txt](types.txt)
+You can track progress for types in [types.txt](types.txt)<br>
 To view project changes see [CHANGELOG.md](CHANGELOG.md)
 
 Links
