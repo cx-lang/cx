@@ -4,7 +4,7 @@ var pegjs = require('pegjs');
 var UglifyJS = require('uglifyjs');
 var mkdirp = require('mkdirp');
 
-var newLineChars = /(\n|\r\n|\r)/g;
+var newLineChars = /(\n|\r\n|\r|\u2028|\u2029)/g;
 global.indent = function ( data, tabs ) {
   return data.replace(newLineChars, function(m, nl){ return nl + (tabs || "  "); });
 };
