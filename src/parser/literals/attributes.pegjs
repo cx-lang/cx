@@ -17,7 +17,7 @@ AttributeAssignment
 
 AttributeExpression
   = "@[" __ properties:PropertyList __ "]" {
-      return append({ type: 'attribute', kind:'Expression', properties: properties });
+      return append({ type: 'attribute', kind:'Object', properties: properties });
     }
 
 Options

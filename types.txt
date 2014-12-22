@@ -23,8 +23,8 @@ Column E) type#kind (rule)
 [X] [ ] [ ] [ ] literal#RegularExpression (RegExpLiteral)
 [ ] [ ] [ ] [ ] attribute#Call
 [ ] [ ] [ ] [ ] attribute#Assignment
-[ ] [ ] [ ] [ ] attribute#Expression
-[ ] [ ] [ ] [ ] attribute#Declaration
+[ ] [ ] [ ] [ ] attribute#Object
+[ ] [ ] [ ] [ ] attribute#Options
 [ ] [ ] [ ] [ ] this
 [ ] [ ] [ ] [ ] array
 [ ] [ ] [ ] [ ] object
