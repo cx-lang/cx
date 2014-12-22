@@ -3,8 +3,8 @@ ArrayLiteral "array"
       return append({ type: 'array', elements: [] });
     }
   / "[" __ elements:ElementList __ "]" {
-    return append({ type: "array", elements: elements });
-  }
+      return append({ type: "array", elements: elements });
+    }
 
 ElementList
   = first:AssignmentExpression rest:(__ "," __ element:AssignmentExpression)* __ ","? {
