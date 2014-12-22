@@ -26,5 +26,5 @@ Options
     }
 
 TypeName
-  = MemberExpression
-  / Identifier
+  = IdentifierPath
+  / MemberExpression
