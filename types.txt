@@ -6,7 +6,6 @@ Column E) type#kind (rule)
 
  A   B   C   D
 ---------------
-[ ] [ ] [ ] [ ] package
 [X] [ ] [ ] [ ] identifier (IdentifierName)
 [X] [ ] [ ] [ ] path (IdentifierPath)
 [X] [ ] [ ] [ ] literal#Null (NullLiteral)
@@ -26,15 +25,13 @@ Column E) type#kind (rule)
 [ ] [ ] [ ] [ ] attribute#Assignment
 [ ] [ ] [ ] [ ] attribute#Expression
 [ ] [ ] [ ] [ ] attribute#Declaration
-[X] [ ] [ ] [ ] this
+[ ] [ ] [ ] [ ] this
 [ ] [ ] [ ] [ ] array
 [ ] [ ] [ ] [ ] object
 [ ] [ ] [ ] [ ] property
 [ ] [ ] [ ] [ ] new
 [ ] [ ] [ ] [ ] member
 [ ] [ ] [ ] [ ] call (CallExpression)
-[ ] [ ] [ ] [ ] AssignmentExpression
-[ ] [ ] [ ] [ ] FunctionExpression
 [ ] [ ] [ ] [ ] 
 [ ] [ ] [ ] [ ] 
 [ ] [ ] [ ] [ ] 
@@ -46,4 +43,6 @@ Column E) type#kind (rule)
 [ ] [ ] [ ] [ ] 
 [ ] [ ] [ ] [ ] 
 [ ] [ ] [ ] [ ] 
-[ ] [ ] [ ] [ ]
+[ ] [ ] [ ] [ ] 
+[ ] [ ] [ ] [ ] 
+[ ] [ ] [ ] [ ] 
