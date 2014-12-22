@@ -21,10 +21,10 @@ Column E) type#kind (rule)
 [X] [ ] [ ] [ ] literal#SingleString (SingleString)
 [X] [ ] [ ] [ ] literal#TemplateString (TemplateString)
 [X] [ ] [ ] [ ] literal#RegularExpression (RegExpLiteral)
-[ ] [ ] [ ] [ ] attribute#Call
-[ ] [ ] [ ] [ ] attribute#Assignment
-[ ] [ ] [ ] [ ] attribute#Object
-[ ] [ ] [ ] [ ] attribute#Options
+[X] [ ] [ ] [ ] attribute#Call
+[X] [ ] [ ] [ ] attribute#Assignment
+[X] [ ] [ ] [ ] attribute#Object
+[X] [ ] [ ] [ ] attribute#Options
 [ ] [ ] [ ] [ ] this
 [ ] [ ] [ ] [ ] array
 [ ] [ ] [ ] [ ] object
