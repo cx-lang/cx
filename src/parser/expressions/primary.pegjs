@@ -1,5 +1,5 @@
 PrimaryExpression
-  = ThisToken { return { type: "this" }; }
+  = ThisToken { return append({ type: "this" }); }
   / IdentifierPath
   / Literal
   / ArrayLiteral
