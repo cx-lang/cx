@@ -15,21 +15,25 @@ Keyword
   / ExternToken
   / FalseToken
   / ForToken
+  / FriendToken
   / FunctionToken
+  / GetToken
   / IfToken
+  / InstanceofToken
   / ImportToken
   / InToken
   / InlineToken
   / InterfaceToken
   / LetToken
   / MacroToken
+  / NamespaceToken
   / NewToken
   / NullToken
-  / OfToken
-  / PackageToken
   / PrivateToken
+  / ProtectedToken
   / PublicToken
   / ReturnToken
+  / SetToken
   / StaticToken
   / StructToken
   / SuperToken
@@ -38,6 +42,7 @@ Keyword
   / ThrowToken
   / TrueToken
   / TryToken
+  / TypeofToken
   / UsingToken
   / VarToken
   / WhileToken
