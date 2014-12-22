@@ -2,39 +2,38 @@ Column A) Parser Grammer
 Column B) VM Method
 Column C) JavaScript Output
 Column D) C++ Output
-Column E) type#kind (rule)
 
- A   B   C   D
----------------
-[X] [ ] [ ] [ ] identifier (IdentifierName)
-[X] [ ] [ ] [ ] path (IdentifierPath)
-[X] [ ] [ ] [ ] literal#Null (NullLiteral)
-[X] [ ] [ ] [ ] literal#Boolean (BooleanLiteral)
-[X] [ ] [ ] [ ] literal#HexInteger (HexIntegerLiteral)
-[X] [ ] [ ] [ ] literal#SignedMultiFloat (DecimalLiteral)
-[X] [ ] [ ] [ ] literal#UnsignedMultiFloat (DecimalLiteral)
-[X] [ ] [ ] [ ] literal#SignedFloat (DecimalLiteral)
-[X] [ ] [ ] [ ] literal#UnsignedFloat (DecimalLiteral)
-[X] [ ] [ ] [ ] literal#SignedInteger (DecimalLiteral)
-[X] [ ] [ ] [ ] literal#UnsignedInteger (DecimalLiteral)
-[X] [ ] [ ] [ ] literal#DoubleString (DoubleString)
-[X] [ ] [ ] [ ] literal#SingleString (SingleString)
-[X] [ ] [ ] [ ] literal#TemplateString (TemplateString)
-[X] [ ] [ ] [ ] literal#RegularExpression (RegExpLiteral)
-[X] [ ] [ ] [ ] attribute#Call
-[X] [ ] [ ] [ ] attribute#Assignment
-[X] [ ] [ ] [ ] attribute#Object
-[X] [ ] [ ] [ ] attribute#Options
-[X] [ ] [ ] [ ] this
-[X] [ ] [ ] [ ] array
-[X] [ ] [ ] [ ] object
-[X] [ ] [ ] [ ] property#Identifier
-[X] [ ] [ ] [ ] property#Expression
-[X] [ ] [ ] [ ] property#Assignment
-[X] [ ] [ ] [ ] property#getter
-[X] [ ] [ ] [ ] property#setter
-[X] [ ] [ ] [ ] accessor#getter
-[X] [ ] [ ] [ ] accessor#setter
-[ ] [ ] [ ] [ ] new
-[ ] [ ] [ ] [ ] member
-[ ] [ ] [ ] [ ] call (CallExpression)
+ A   B   C   D  |          type#kind         |      rule
+----------------|----------------------------|-------------------
+[X] [ ] [ ] [ ] | identifier                 | IdentifierName
+[X] [ ] [ ] [ ] | path                       | IdentifierPath
+[X] [ ] [ ] [ ] | literal#Null               | NullLiteral
+[X] [ ] [ ] [ ] | literal#Boolean            | BooleanLiteral
+[X] [ ] [ ] [ ] | literal#HexInteger         | HexIntegerLiteral
+[X] [ ] [ ] [ ] | literal#SignedMultiFloat   | DecimalLiteral
+[X] [ ] [ ] [ ] | literal#UnsignedMultiFloat | DecimalLiteral
+[X] [ ] [ ] [ ] | literal#SignedFloat        | DecimalLiteral
+[X] [ ] [ ] [ ] | literal#UnsignedFloat      | DecimalLiteral
+[X] [ ] [ ] [ ] | literal#SignedInteger      | DecimalLiteral
+[X] [ ] [ ] [ ] | literal#UnsignedInteger    | DecimalLiteral
+[X] [ ] [ ] [ ] | literal#DoubleString       | DoubleString
+[X] [ ] [ ] [ ] | literal#SingleString       | SingleString
+[X] [ ] [ ] [ ] | literal#TemplateString     | TemplateString
+[X] [ ] [ ] [ ] | literal#RegularExpression  | RegExpLiteral
+[X] [ ] [ ] [ ] | attribute#Call             |
+[X] [ ] [ ] [ ] | attribute#Assignment       |
+[X] [ ] [ ] [ ] | attribute#Object           |
+[X] [ ] [ ] [ ] | attribute#Options          |
+[X] [ ] [ ] [ ] | this                       |
+[X] [ ] [ ] [ ] | array                      |
+[X] [ ] [ ] [ ] | object                     |
+[X] [ ] [ ] [ ] | property#Identifier        |
+[X] [ ] [ ] [ ] | property#Expression        |
+[X] [ ] [ ] [ ] | property#Assignment        |
+[X] [ ] [ ] [ ] | property#getter            |
+[X] [ ] [ ] [ ] | property#setter            |
+[X] [ ] [ ] [ ] | accessor#getter            |
+[X] [ ] [ ] [ ] | accessor#setter            |
+[ ] [ ] [ ] [ ] | new                        |
+[ ] [ ] [ ] [ ] | member                     |
+[ ] [ ] [ ] [ ] | call                       | CallExpression
