@@ -1,7 +1,7 @@
 {
   "name": "cx-lang",
   "version": "0.0.0",
-  "description": "Provides a statically dynamic language.",
+  "description": "The statically typed dynamic language.",
   "keywords": [
     "cx",
     "c++",
