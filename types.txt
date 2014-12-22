@@ -27,22 +27,14 @@ Column E) type#kind (rule)
 [X] [ ] [ ] [ ] attribute#Options
 [X] [ ] [ ] [ ] this
 [X] [ ] [ ] [ ] array
-[ ] [ ] [ ] [ ] object
-[ ] [ ] [ ] [ ] property
+[X] [ ] [ ] [ ] object
+[X] [ ] [ ] [ ] property#Identifier
+[X] [ ] [ ] [ ] property#Expression
+[X] [ ] [ ] [ ] property#Assignment
+[X] [ ] [ ] [ ] property#getter
+[X] [ ] [ ] [ ] property#setter
+[X] [ ] [ ] [ ] accessor#getter
+[X] [ ] [ ] [ ] accessor#setter
 [ ] [ ] [ ] [ ] new
 [ ] [ ] [ ] [ ] member
 [ ] [ ] [ ] [ ] call (CallExpression)
-[ ] [ ] [ ] [ ] 
-[ ] [ ] [ ] [ ] 
-[ ] [ ] [ ] [ ] 
-[ ] [ ] [ ] [ ] 
-[ ] [ ] [ ] [ ] 
-[ ] [ ] [ ] [ ] 
-[ ] [ ] [ ] [ ] 
-[ ] [ ] [ ] [ ] 
-[ ] [ ] [ ] [ ] 
-[ ] [ ] [ ] [ ] 
-[ ] [ ] [ ] [ ] 
-[ ] [ ] [ ] [ ] 
-[ ] [ ] [ ] [ ] 
-[ ] [ ] [ ] [ ] 
