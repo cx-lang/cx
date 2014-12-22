@@ -20,20 +20,20 @@ Column D) C++ Output
 [X] [ ] [ ] [ ] | literal#SingleString       | SingleString
 [X] [ ] [ ] [ ] | literal#TemplateString     | TemplateString
 [X] [ ] [ ] [ ] | literal#RegularExpression  | RegExpLiteral
-[X] [ ] [ ] [ ] | attribute#Call             |
-[X] [ ] [ ] [ ] | attribute#Assignment       |
-[X] [ ] [ ] [ ] | attribute#Object           |
-[X] [ ] [ ] [ ] | attribute#Options          |
-[X] [ ] [ ] [ ] | this                       |
-[X] [ ] [ ] [ ] | array                      |
-[X] [ ] [ ] [ ] | object                     |
-[X] [ ] [ ] [ ] | property#Identifier        |
-[X] [ ] [ ] [ ] | property#Expression        |
-[X] [ ] [ ] [ ] | property#Assignment        |
-[X] [ ] [ ] [ ] | property#getter            |
-[X] [ ] [ ] [ ] | property#setter            |
-[X] [ ] [ ] [ ] | accessor#getter            |
-[X] [ ] [ ] [ ] | accessor#setter            |
-[ ] [ ] [ ] [ ] | new                        |
-[ ] [ ] [ ] [ ] | member                     |
+[X] [ ] [ ] [ ] | attribute#Call             | AttributeCall
+[X] [ ] [ ] [ ] | attribute#Assignment       | AttributeAssignment
+[X] [ ] [ ] [ ] | attribute#Object           | AttributeExpression
+[X] [ ] [ ] [ ] | attribute#Options          | Options
+[X] [ ] [ ] [ ] | this                       | PrimaryExpression
+[X] [ ] [ ] [ ] | array                      | ArrayLiteral
+[X] [ ] [ ] [ ] | object                     | ObjectLiteral
+[X] [ ] [ ] [ ] | property#Identifier        | PropertyItem
+[X] [ ] [ ] [ ] | property#Expression        | PropertyItem
+[X] [ ] [ ] [ ] | property#Assignment        | PropertyItem
+[X] [ ] [ ] [ ] | property#getter            | GetterProperty
+[X] [ ] [ ] [ ] | property#setter            | SetterProperty
+[X] [ ] [ ] [ ] | accessor#getter            | GetterBlock
+[X] [ ] [ ] [ ] | accessor#setter            | SetterBlock
+[ ] [ ] [ ] [ ] | new                        | 
+[ ] [ ] [ ] [ ] | member                     | 
 [ ] [ ] [ ] [ ] | call                       | CallExpression
