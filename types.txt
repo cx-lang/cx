@@ -25,8 +25,8 @@ Column E) type#kind (rule)
 [X] [ ] [ ] [ ] attribute#Assignment
 [X] [ ] [ ] [ ] attribute#Object
 [X] [ ] [ ] [ ] attribute#Options
-[ ] [ ] [ ] [ ] this
-[ ] [ ] [ ] [ ] array
+[X] [ ] [ ] [ ] this
+[X] [ ] [ ] [ ] array
 [ ] [ ] [ ] [ ] object
 [ ] [ ] [ ] [ ] property
 [ ] [ ] [ ] [ ] new
