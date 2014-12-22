@@ -1,5 +1,3 @@
-TARGET_LANGUAGE = "all"
-
 status:
 	git status -s
 
@@ -15,7 +13,7 @@ browser:
 	node scripts/package-dist.js
 
 examples:
-	node scripts/build-examples.js $(TARGET_LANGUAGE)
+	node scripts/build-examples.js
 
 clean:
 	rm -rf examples/ast
