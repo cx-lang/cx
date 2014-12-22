@@ -32,7 +32,7 @@ ObjectProperty
  / options:Options __ key:PropertyName __ ":" __ value:AssignmentExpression {
       return append({
         type: 'property',
-        kind: 'TypedAssignment',
+        kind: 'Assignment',
         attributes: options.attributes,
         types: options.types,
         key: key,
