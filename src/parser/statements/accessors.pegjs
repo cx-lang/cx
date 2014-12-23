@@ -23,28 +23,44 @@ SetterBlock
     }
 
 GetterStatement
-  = GetToken __ identifier:Identifier __ getter:GetterBlock {
+  = options:(Options __)? GetToken __ identifier:Identifier __ getter:GetterBlock {
       getter.identifier = identifier;
+      if ( options ) {
+        getter.attributes = options[0].attributes;
+        getter.returns = options[0].type;
+      }
       return append(getter);
     }
 
 SetterStatement
-  = SetToken __ identifier:Identifier __ setter:SetterBlock {
+  = options:(Options __)? SetToken __ identifier:Identifier __ setter:SetterBlock {
       setter.identifier = identifier;
+      if ( options ) {
+        setter.attributes = options[0].attributes;
+        setter.returns = options[0].type;
+      }
       return append(setter);
     }
 
 GetterProperty
-  = GetToken __ key:PropertyName __ getter:GetterBlock {
+  = options:(Options __)? GetToken __ key:PropertyName __ getter:GetterBlock {
       getter.type = 'property';
       getter.identifier = key;
+      if ( options ) {
+        getter.attributes = options[0].attributes;
+        getter.returns = options[0].type;
+      }
       return append(getter);
     }
 
 SetterProperty
-  = SetToken __ key:PropertyName __ setter:SetterBlock {
+  = options:(Options __)? SetToken __ key:PropertyName __ setter:SetterBlock {
       getter.type = 'property';
       setter.identifier = key;
+      if ( options ) {
+        setter.attributes = options[0].attributes;
+        setter.returns = options[0].type;
+      }
       return append(setter);
     }
 

@@ -15,8 +15,19 @@ PropertyItem
   = IdentifierName
   / MemberExpression
   / CallExpression
-  / key:PropertyName __ ":" __ value:AssignmentExpression {
-      return append({ type: 'property', kind: 'data', key: key, value: value });
+  / options:(Options __)? key:PropertyName __ ":" __ value:AssignmentExpression {
+      var property = {
+        type: 'property',
+        kind: 'data',
+        key: key,
+        value: value,
+        attributes: []
+      };
+      if ( options ) {
+        property.attributes = options[0].attributes;
+        property.returns = options[0].type;
+      }
+      return append(property);
     }
   / GetterProperty
   / SetterProperty
