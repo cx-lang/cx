@@ -29,6 +29,5 @@ Column D) C++ Output
 [X] [ ] [ ] [ ] | property#Assignment        | PropertyItem
 [X] [ ] [ ] [ ] | accessor#getter            | GetterBlock
 [X] [ ] [ ] [ ] | accessor#setter            | SetterBlock
-[ ] [ ] [ ] [ ] | new                        | 
-[ ] [ ] [ ] [ ] | member                     | 
+[ ] [ ] [ ] [ ] | new                        | NewExpression
 [ ] [ ] [ ] [ ] | call                       | CallExpression

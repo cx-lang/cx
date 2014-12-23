@@ -10,10 +10,10 @@ AttributeList
 
 Attribute
   = IdentifierName
-  / MemberExpression
+  / IdentifierPath
   / CallExpression
 
 Options
-  = attributes:(AttributeLiteral __)? type:MemberExpression {
+  = attributes:(AttributeLiteral __)? type:IdentifierPath {
       return { attributes: extractOptional(attributes, 0) || [], type: type };
     }

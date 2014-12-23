@@ -13,7 +13,7 @@ PropertyList
 
 PropertyItem
   = IdentifierName
-  / MemberExpression
+  / IdentifierPath
   / CallExpression
   / key:PropertyName __ ":" __ value:AssignmentExpression {
       return append({ type: 'property', kind: 'Assignment', key: key, value: value });
