@@ -4,7 +4,8 @@ It is based on C++, C#, TypeScript, JavaScript, HTML/CSS and HaXe.
 Progress
 ========
 You can track progress for types in [types.txt](types.txt)<br>
-To view project changes see [CHANGELOG.md](CHANGELOG.md)
+To view project changes see [CHANGELOG.md](CHANGELOG.md)<br>
+Parser rules not implemented are listed in [src/parser/TODO.pegjs](src/parser/TODO.pegjs)
 
 Links
 =====

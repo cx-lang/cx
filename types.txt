@@ -32,4 +32,3 @@ Column D) C++ Output
 [X] [ ] [ ] [ ] | new                        | NewExpression
 [X] [ ] [ ] [ ] | member                     | MemberExpression
 [X] [ ] [ ] [ ] | call                       | CallExpression
-[ ] [ ] [ ] [ ] | function                   | FunctionExpression
