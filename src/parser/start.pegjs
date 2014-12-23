@@ -1,16 +1,13 @@
-@import "utils.js"
+{
+  @import "utils.js"
+}
 
 // parser entry point
 
   start
-    = __ elements:(__ MainBodyElement __)* __ {
-        return append({ type: 'package', name: 'global', elements: extractOptional(elements, 1), api: 'cx-0' });
+    = __ elements:(__ NamespaceElement __)* __ {
+        return append({ type: 'namespace', name: 'global', elements: extractOptional(elements, 1), api: 'cx-0' });
       }
-
-  MainBodyElement
-    = FunctionElement
-    / ClassElement
-    / PackageElement
 
 @import "grammer"
 

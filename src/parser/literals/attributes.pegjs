@@ -1,30 +1,19 @@
 AttributeLiteral "attribute"
-  = AttributeCall
-  / AttributeAssignment
-  / AttributeExpression
-
-AttributeCall
-  = "@" expression:CallExpression {
-      expression.type = 'attribute';
-      expression.kind = 'Call';
-      return expression;
+  = "[" __ properties:AttributeList __ "]" {
+      return append({ type: 'attributes', properties: properties });
     }
 
-AttributeAssignment
-  = "@" label:(IdentifierName / MemberExpression) value:(__ "=" __ AssignmentExpression)? {
-      return append({ type: 'attribute', kind: 'Assignment', label: label, value: extractOptional(value, 3)  });
+AttributeList
+  = first:Attribute rest:(__ "," __ Attribute) {
+      return buildList(first, rest, 3);
     }
 
-AttributeExpression
-  = "@[" __ properties:PropertyItemList __ "]" {
-      return append({ type: 'attribute', kind:'Object', properties: properties });
-    }
+Attribute
+  = IdentifierName
+  / MemberExpression
+  / CallExpression
 
 Options
-  = attributes:AttributeLiteral? __ types:(TypeName __)* {
-      return append({ type: 'attribute', kind: 'Options', attributes: attributes, types: extractOptional(types, 0) || [] });
+  = attributes:(AttributeLiteral __)? type:MemberExpression {
+      return { attributes: extractOptional(attributes, 0) || [], type: type };
     }
-
-TypeName
-  = IdentifierPath
-  / MemberExpression
