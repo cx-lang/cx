@@ -10,7 +10,7 @@ AttributeList
 
 Attribute
   = IdentifierName
-  / IdentifierPath
+  / MemberExpression
   / CallExpression
 
 Options
