@@ -30,5 +30,6 @@ Column D) C++ Output
 [X] [ ] [ ] [ ] | accessor#getter            | GetterBlock
 [X] [ ] [ ] [ ] | accessor#setter            | SetterBlock
 [ ] [ ] [ ] [ ] | new                        | NewExpression
-[ ] [ ] [ ] [ ] | member                     | MemberExpression
+[X] [ ] [ ] [ ] | member                     | MemberExpression
 [ ] [ ] [ ] [ ] | call                       | CallExpression
+[ ] [ ] [ ] [ ] | function                   | FunctionExpression
