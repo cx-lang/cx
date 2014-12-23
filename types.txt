@@ -29,7 +29,7 @@ Column D) C++ Output
 [X] [ ] [ ] [ ] | property#Assignment        | PropertyItem
 [X] [ ] [ ] [ ] | accessor#getter            | GetterBlock
 [X] [ ] [ ] [ ] | accessor#setter            | SetterBlock
-[ ] [ ] [ ] [ ] | new                        | NewExpression
+[X] [ ] [ ] [ ] | new                        | NewExpression
 [X] [ ] [ ] [ ] | member                     | MemberExpression
-[ ] [ ] [ ] [ ] | call                       | CallExpression
+[X] [ ] [ ] [ ] | call                       | CallExpression
 [ ] [ ] [ ] [ ] | function                   | FunctionExpression
