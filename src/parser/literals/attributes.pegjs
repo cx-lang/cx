@@ -14,6 +14,6 @@ Attribute
   / CallExpression
 
 Options
-  = attributes:(AttributeLiteral __)? type:IdentifierPath {
+  = attributes:(AttributeLiteral __)? type:TypeName {
       return { attributes: extractOptional(attributes, 0) || [], type: type };
     }

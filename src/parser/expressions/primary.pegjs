@@ -1,6 +1,6 @@
 PrimaryExpression
   = ThisToken { return append({ type: "this" }); }
-  / IdentifierPath
+  / GenericName
   / Literal
   / ArrayLiteral
   / ObjectLiteral

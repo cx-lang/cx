@@ -28,13 +28,8 @@ CallExpression
     }
 
 CallArguments
-  = template_args:TemplateCallArguments? __ "(" __ args:(CallArgumentList __)? ")" {
+  = template_args:TemplateArguments? __ "(" __ args:(CallArgumentList __)? ")" {
       return  { template: template_args || [], call: extractOptional(args, 0) || [] };
-    }
-
-TemplateCallArguments
-  = "<" __ args:(IdentifierPath __)* ">" {
-      return extractOptional(args, 0) || [];
     }
 
 CallArgumentList

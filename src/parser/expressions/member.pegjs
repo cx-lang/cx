@@ -1,5 +1,5 @@
 MemberExpression
-  = IdentifierPath
+  = GenericName
   / first:(
         PrimaryExpression
       / FunctionExpression

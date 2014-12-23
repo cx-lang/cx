@@ -24,9 +24,9 @@ Column D) C++ Output
 [X] [ ] [ ] [ ] | this                       | PrimaryExpression
 [X] [ ] [ ] [ ] | array                      | ArrayLiteral
 [X] [ ] [ ] [ ] | object                     | ObjectLiteral
-[X] [ ] [ ] [ ] | property#Identifier        | PropertyItem
-[X] [ ] [ ] [ ] | property#Expression        | PropertyItem
-[X] [ ] [ ] [ ] | property#Assignment        | PropertyItem
+[X] [ ] [ ] [ ] | property#data              | PropertyItem
+[X] [ ] [ ] [ ] | property#getter            | GetterProperty
+[X] [ ] [ ] [ ] | property#setter            | SetterProperty
 [X] [ ] [ ] [ ] | accessor#getter            | GetterBlock
 [X] [ ] [ ] [ ] | accessor#setter            | SetterBlock
 [X] [ ] [ ] [ ] | new                        | NewExpression

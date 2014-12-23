@@ -16,8 +16,10 @@ PropertyItem
   / MemberExpression
   / CallExpression
   / key:PropertyName __ ":" __ value:AssignmentExpression {
-      return append({ type: 'property', kind: 'Assignment', key: key, value: value });
+      return append({ type: 'property', kind: 'data', key: key, value: value });
     }
+  / GetterProperty
+  / SetterProperty
 
 PropertyName
   = IdentifierName
