@@ -3,6 +3,7 @@ StringLiteral "string"
       if ( modifier ) string.modifier = modifier;
       return append(string);
     }
+  / CharLiteral
 
 DoubleString
   = '"' chars:DoubleStringCharacter* '"' {

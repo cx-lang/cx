@@ -5,6 +5,7 @@ Literal
   / StringLiteral
   / RegExpLiteral
   / AttributeLiteral
+  / CharLiteral
 
 NullLiteral
   = NullToken { return append({ type: "literal", kind: "Null" }); }

@@ -36,3 +36,11 @@ function buildTree ( first, rest, builder ) {
   }
   return result;
 }
+
+function toCharCode ( character ) {
+    var codeHex = character.charCodeAt(0).toString().toUpperCase();
+    while ( codeHex.length < 4 ) {
+        codeHex = "0" + codeHex;
+    }
+    return codeHex;
+}
