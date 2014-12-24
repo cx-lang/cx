@@ -1,5 +1,6 @@
 Keyword
-  = AbstractToken
+  = AsToken
+  / AbstractToken
   / AwaitToken
   / BreakToken
   / CaseToken
