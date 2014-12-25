@@ -34,6 +34,7 @@ Links
 -----
   
   Homepage: https://erispa.github.io/cx<br>
+  DocumentUp: http://documentup.com/erispa/cx<br>
   Wiki: https://github.com/erispa/cx/wiki<br>
   Issues: https://github.com/erispa/cx/issues<br>
   NPM: https://www.npmjs.com/package/cx-lang
