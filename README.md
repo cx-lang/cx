@@ -1,14 +1,20 @@
 This is a programming language that can optionally transpile to any language you define.
 It is based on C++, C#, TypeScript, JavaScript, HTML/CSS and HaXe.
 
+Version
+-------
+Development: 0.0.1
+NPM Release: 0.0.0
+
 Progress
-========
+--------
 You can track progress for types in [types.txt](types.txt)<br>
 To view project changes see [CHANGELOG.md](CHANGELOG.md)<br>
 Parser rules not implemented are listed in [src/parser/TODO.pegjs](src/parser/TODO.pegjs)
+Roadmap document can be viewed at [docs/roadmap.md](docs/roadmap.md)
 
 Links
-=====
+-----
   
   Homepage: https://erispa.github.io/cx<br>
   Wiki: https://github.com/erispa/cx/wiki<br>
@@ -16,6 +22,6 @@ Links
   NPM: https://www.npmjs.com/package/cx-lang
 
 License
-=======
+-------
 Copyright (c) 2014 Futago-za Ryuu, Erispa<br>
 The MIT License, http://opensource.org/licenses/MIT
