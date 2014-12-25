@@ -3,14 +3,14 @@ It is based on C++, C#, TypeScript, JavaScript, HTML/CSS and HaXe.
 
 Version
 -------
-Development: 0.0.1
+Development: 0.0.1<br>
 NPM Release: 0.0.0
 
 Progress
 --------
-You can track progress for types in [types.txt](types.txt)<br>
-To view project changes see [CHANGELOG.md](CHANGELOG.md)<br>
-Parser rules not implemented are listed in [src/parser/TODO.pegjs](src/parser/TODO.pegjs)
+You can track progress for types in [docs/types.txt](docs/types.txt)<br>
+To view project changes see [docs/changelog.md](docs/changelog.md)<br>
+Parser rules not implemented are listed in [src/parser/TODO.pegjs](src/parser/TODO.pegjs)<br>
 Roadmap document can be viewed at [docs/roadmap.md](docs/roadmap.md)
 
 Install
