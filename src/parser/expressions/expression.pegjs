@@ -1,4 +1,4 @@
-ValueExpression
+LeftHandSideExpression
   = CallExpression
   / NewExpression
 
@@ -58,7 +58,9 @@ RelationalOperators
   / "??"
 
 Expression
-  = ValueExpression
+  = LeftHandSideExpression
+  / LambdaExpression
+  / AssignmentExpression
   / "(" __ left:Expression __ ")" __ right:Expression {
       return append({ type: "expression", kind: "cast", left: left, right: right });
     }

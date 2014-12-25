@@ -39,3 +39,4 @@ Column D) C++ Output
 [X] [ ] [ ] [ ] | expression#cast            | Expression
 [X] [ ] [ ] [ ] | expression#if              | Expression
 [X] [ ] [ ] [ ] | expression#lambda          | LambdaExpression
+[X] [ ] [ ] [ ] | expression#assignment      | AssignmentExpression
