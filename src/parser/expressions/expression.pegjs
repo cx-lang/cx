@@ -28,12 +28,12 @@ PostOperators
   = "++"
   / "--"
 
-MidExpression
-  = left:Expression __ operator:MidOperators __ right:Expression {
-      return append({ type: "expression", kind: "mid", left: left, operator: operator });
+RelationalExpression
+  = left:Expression __ operator:RelationalOperators __ right:Expression {
+      return append({ type: "expression", kind: "relational", left: left, operator: operator });
     }
 
-MidOperators
+RelationalOperators
   = $AsToken
   / $InstanceofToken
   / $InToken
@@ -65,6 +65,6 @@ Expression
   / condition:Expression __ "?" __ left:Expression __ ":" __ right:Expression {
       return append({ type: "expression", kind: "if, condition: condition, pass: left, fail: right });
     }
-  / MidExpression
+  / RelationalExpression
   / PreExpression
   / PostExpression
