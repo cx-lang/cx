@@ -15,21 +15,25 @@ Keyword
   / EnumToken
   / ExternToken
   / FalseToken
+  / FinalToken
   / ForToken
   / FriendToken
   / FunctionToken
   / GetToken
   / IfToken
-  / InstanceofToken
   / ImportToken
   / InToken
   / InlineToken
+  / InstanceofToken
   / InterfaceToken
+  / InternalToken
   / LetToken
   / MacroToken
   / NamespaceToken
   / NewToken
   / NullToken
+  / OperatorToken
+  / PartialToken
   / PrivateToken
   / ProtectedToken
   / PublicToken
