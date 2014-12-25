@@ -1,0 +1,7 @@
+LambdaExpression
+  = args:FunctionArguments __ "=>" __ statement:Statement {
+      return append({ type: "expression", kind: "lambda", args: args, body: statement, inheritThis: true });
+    }
+  / args:FunctionArguments __ "->" __ statement:Statement {
+      return append({ type: "expression", kind: "lambda", args: args, body: statement, inheritThis: false });
+    }

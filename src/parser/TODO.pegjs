@@ -9,4 +9,5 @@ AssignmentExpression
 Expression
 FunctionExpression
 FunctionArgument
+FunctionArguments
 Block

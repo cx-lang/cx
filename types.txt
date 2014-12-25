@@ -38,3 +38,4 @@ Column D) C++ Output
 [X] [ ] [ ] [ ] | expression#relational      | RelationalExpression
 [X] [ ] [ ] [ ] | expression#cast            | Expression
 [X] [ ] [ ] [ ] | expression#if              | Expression
+[X] [ ] [ ] [ ] | expression#lambda          | LambdaExpression
