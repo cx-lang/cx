@@ -13,6 +13,23 @@ To view project changes see [CHANGELOG.md](CHANGELOG.md)<br>
 Parser rules not implemented are listed in [src/parser/TODO.pegjs](src/parser/TODO.pegjs)
 Roadmap document can be viewed at [docs/roadmap.md](docs/roadmap.md)
 
+Install
+-------
+NPM:
+  
+  ```shell
+  npm install -g cx-lang
+  ```
+  
+Git/Node/Make:
+  
+  ```shell
+  git clone https://github.com/erispa/cx.git
+  cd cx
+  npm install
+  make build
+  ```
+
 Links
 -----
   
