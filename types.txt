@@ -33,3 +33,8 @@ Column D) C++ Output
 [X] [ ] [ ] [ ] | member                     | MemberExpression
 [X] [ ] [ ] [ ] | call                       | CallExpression
 [X] [ ] [ ] [ ] | literal#char               | CharLiteral
+[X] [ ] [ ] [ ] | expression#pre             | PreExpression
+[X] [ ] [ ] [ ] | expression#post            | PostExpression
+[X] [ ] [ ] [ ] | expression#mid             | MidExpression
+[X] [ ] [ ] [ ] | expression#cast            | Expression
+[X] [ ] [ ] [ ] | expression#if              | Expression
