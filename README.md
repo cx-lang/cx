@@ -10,7 +10,7 @@ Progress
 --------
 You can track progress for types in [docs/types.txt](docs/types.txt)<br>
 To view project changes see [docs/changelog.md](docs/changelog.md)<br>
-Parser rules not implemented are listed in [src/parser/TODO.pegjs](src/parser/TODO.pegjs)<br>
+Parser rules not implemented are listed in [docs/parser-todo.md](docs/parser-todo.md)<br>
 Roadmap document can be viewed at [docs/roadmap.md](docs/roadmap.md)
 
 Install
