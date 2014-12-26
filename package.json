@@ -21,7 +21,7 @@
     "pegjs": "bin/cx"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node test"
   },
   "repository": {
     "type": "git",
@@ -30,10 +30,13 @@
   "bugs": {
     "url": "https://github.com/erispa/cx/issues"
   },
-  "devDependencies": {
-    "pegjs":         "git://github.com/pegjs/pegjs.git",
+  "dependencies": {
     "uglifyjs":      "2.3.6",
-    "mkdirp":        "0.5.0"
+    "mkdirp":        "0.5.0",
+    "debug":         "2.1.0"
+  },
+  "devDependencies": {
+    "pegjs":         "git://github.com/pegjs/pegjs.git"
   },
   "engines": {
     "node": ">= 0.10.0"
