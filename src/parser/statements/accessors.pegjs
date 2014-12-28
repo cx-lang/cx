@@ -8,7 +8,7 @@ GetterBlock
     }
 
 SetterBlock
-  = param:("(" __ FunctionArgument __ ")" __)? block:Block {
+  = param:("(" __ VariableDeclaration __ ")" __)? block:Block {
       if ( param ) {
         param = param[2];
       } else {
