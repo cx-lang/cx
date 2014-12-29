@@ -4,3 +4,5 @@ When all rule types below have been implemented, then the parser may be generate
   * FunctionArgument
   * FunctionArguments
   * Block
+  * UIMLElement
+  * CSSRule

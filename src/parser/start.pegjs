@@ -5,9 +5,11 @@
 // parser entry point
 
   start
-    = __ elements:(__ NamespaceElement __)* __ {
-        return append({ type: 'namespace', name: 'global', elements: extractOptional(elements, 1), api: 'cx-0' });
-      }
+    = UIML
+    / CSS
+    / Library
+    / Program
+    / Script
 
 @import "grammer"
 
@@ -16,3 +18,5 @@
 @import "expressions"
 
 @import "statements"
+
+@import "programs"
