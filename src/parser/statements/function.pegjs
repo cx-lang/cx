@@ -4,8 +4,8 @@ FunctionStatement
 
 FunctionExpression
   = LambdaExpression
-  / options:Options __ FunctionToken __ args:FunctionArguments __ statements:Block {
-      return append({ type: "function", options: options, args: args, statements: statements });
+  / options:Options __ FunctionToken __ args:FunctionArguments __ block:Block {
+      return append({ type: "function", options: options, args: args, body: block });
     }
 
 GeneratorExpression
@@ -14,17 +14,14 @@ GeneratorExpression
       return append({ type: "generator", options: options, args: args, body: block });
     }
 
-GeneratorBlock
-  = "{" statements:(__ (Statement / YieldStatement))* __ "}" {
-      return statements ? extractList(statements, 1) : [];
-    }
+FunctionArguments "arguments"
+  = "(" __ first:FunctionArgument rest:(__ "," __ FunctionArgument)* __ ")" { return buildList(first, rest, 3); }
 
-FunctionArguments
-  = "(" __ first:VariableDeclaration rest:(__ "," __ VariableDeclaration)* __ ")" { return buildList(first, rest, 3); }
-
-VariableDeclaration
-  = constant:(ConstToken __)? kind:TypeName __ identifier:Identifier value:(__ "=" __ AssignmentExpression)? {
-      return append({ type: "variable", constant: constant != null, identifier: identifier, value: value || null });
+FunctionArgument "argument"
+  = constant:(ConstToken __)? variable:VariableAssignment {
+      variable.type = "argument";
+      variable.constant = constant != null;
+      return variable;
     }
 
 FunctionBody

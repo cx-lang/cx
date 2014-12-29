@@ -1,5 +1,6 @@
 Statement
-  = AbstractStatement
+  = Block
+  / AbstractStatement
   / ClassStatement
   / NamespaceStatement
   / StructStatement
@@ -22,5 +23,12 @@ Statement
   / PreprocessorStatement
   / CompilerStatement
 
+GeneratorStatement
+  = YieldStatement
+  / Statement
+
 StatementList
   = first:Statement rest:(__ Statement)* { return buildList(first, rest, 1); }
+
+GeneratorStatementList
+  = first:GeneratorStatement rest:(__ GeneratorStatement)* { return buildList(first, rest, 1); }
