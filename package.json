@@ -30,12 +30,10 @@
   "bugs": {
     "url": "https://github.com/erispa/cx/issues"
   },
-  "dependencies": {
+  "devDependencies": {
     "uglifyjs":      "2.3.6",
     "mkdirp":        "0.5.0",
-    "debug":         "2.1.0"
-  },
-  "devDependencies": {
+    "debug":         "2.1.0",
     "pegjs":         "git://github.com/pegjs/pegjs.git"
   },
   "engines": {
