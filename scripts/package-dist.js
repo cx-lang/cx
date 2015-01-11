@@ -28,5 +28,5 @@ var output = readFile(join(SRC_DIR, 'dist-template.js'))
   .replace('__MODULES__', modules.join(",\n\n"))
   .replace('__VERSION__', version);
 
-writeFIle(join(DIST_DIR, 'cx-' + version + '.js'), output);
-writeFIle(join(DIST_DIR, 'cx-' + version + '.min.js'), minify(output));
+writeFile(join(DIST_DIR, 'cx-' + version + '.js'), output);
+writeFile(join(DIST_DIR, 'cx-' + version + '.min.js'), minify(output));
