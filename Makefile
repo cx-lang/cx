@@ -21,7 +21,7 @@ clean:
 	rm -rf examples/ast
 	rm -rf examples/cpp
 	rm -rf examples/js
-  rm -rf dist
+	rm -rf dist
 	rm -f lib/parser.js
 	rm -f src/parser.pegjs
 
