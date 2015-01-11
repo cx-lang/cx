@@ -46,7 +46,7 @@ if ( typeof global === "undefined" ) var global = this;
   }
 
   // Universal Module Definition (UMD) to support AMD, CommonJS/Node.js, Rhino, and plain browser loading
-  cx = require('cx/browser');
+  cx = require('cx/lib/browser');
   cx.require = require;
   if ( typeof define === 'function' ) {
     factory = function ( ) { return cx; };

@@ -6,7 +6,7 @@ var mkdirp = require('mkdirp');
 
 var newLineChars = /(\n|\r\n|\r|\u2028|\u2029)/g;
 global.indent = function ( data, tabs ) {
-  return data.replace(newLineChars, function(m, nl){ return nl + (tabs || "  "); });
+  return (tabs || "  ") + data.replace(newLineChars, function(m, nl){ return nl + (tabs || "  "); });
 };
 
 global.buildParser = function ( grammer ) {
@@ -24,7 +24,7 @@ global.readFile = function ( filename ) {
 };
 
 global.writeFile = function ( filename, data ) {
-  mkdirp.sync(filename);
+  mkdirp.sync(dirname(filename));
   return fs.writeFileSync(filename, data);
 };
 
