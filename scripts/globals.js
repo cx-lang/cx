@@ -30,9 +30,9 @@ global.writeFile = function ( filename, data ) {
 
 global.exists = fs.existsSync;
 global.lstat = fs.lstatSync;
-global.basename = fs.basename;
-global.dirname = fs.dirname;
-global.extname = fs.extname;
+global.basename = path.basename;
+global.dirname = path.dirname;
+global.extname = path.extname;
 global.join = path.join;
 global.resolve = path.resolve;
 
