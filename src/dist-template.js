@@ -1,5 +1,5 @@
 /*
-  Copyright (c) 2014 Futago-za Ryuu <futagoza.ryuu@gmail.com>
+  Copyright (c) 2015 Futago-za Ryuu <futagoza.ryuu@gmail.com>
   https://github.com/erispa/cx, v__VERSION__
   
   Permission is hereby granted, free of charge, to any person obtaining a copy
