@@ -32,6 +32,7 @@ Keyword
   / NamespaceToken
   / NewToken
   / NullToken
+  / OfToken
   / OperatorToken
   / PartialToken
   / PrivateToken
