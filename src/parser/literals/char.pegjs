@@ -1,4 +1,4 @@
 CharLiteral "char"
   = "'" ch:[\u0000-\uFFFF] "'" {
-      return append({ type: "literal", kind: "char", value: ch[1], code: toCharCode(ch[1]) });
+      return append({ type: "literal", kind: "char", value: ch, code: toCharCode(ch) });
     }
