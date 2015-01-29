@@ -8,6 +8,8 @@ Integer
 
 Float
   = $(Integer "." Integer)
+  / f:$(Integer "." Integer) "f" { return f; }
+  / f:Integer "f" { return f; }
 
 MultiFloat
   = $(
