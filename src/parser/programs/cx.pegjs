@@ -1,19 +1,20 @@
 CX
-  = elements:(__ CXElement)* __ {
-      return { type: 'program', name: options.filename, elements: elements ? extractList(elements, 1) : [] };
+  = elements:NamespaceElements {
+      return {
+        type: 'program',
+        name: options.filename,
+        program: {
+          type: 'namespace',
+          identifier: {
+            type: 'identifier',
+            value: 'global',
+            pos: {
+              start: { offset: 0, line: 1, column: 1 },
+              end: { offset: 0, line: 1, column: 1 },
+              range: [0, 0]
+            }
+          },
+          elements: elements
+        }
+      };
     }
-
-CXElement
-  = Namespace
-  / Abstract
-  / Class
-  / Interface
-  / Macro
-  / Struct
-  / Enum
-  / Extern
-  / Using
-  / Directive
-  / Import
-  / Function
-  / VariableDeclaration
