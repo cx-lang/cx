@@ -9,10 +9,10 @@ pegjs:
 parser:
 	node scripts/build-parser.js
 
-dist: browser
-
 browser:
 	node scripts/package-dist.js
+
+dist: parser browser
 
 examples:
 	node scripts/build-examples.js
