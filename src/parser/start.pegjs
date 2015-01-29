@@ -7,9 +7,7 @@
   start
     = UIML
     / CSS
-    / Library
-    / Program
-    / Script
+    / CX
 
 @import "grammer"
 
