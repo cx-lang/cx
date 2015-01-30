@@ -20,6 +20,7 @@ Keyword
   / FriendToken
   / FunctionToken
   / GetToken
+  / GotoToken
   / IfToken
   / ImportToken
   / InToken
