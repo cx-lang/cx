@@ -52,3 +52,6 @@ Column D) C++ Output
 [X] [ ] [ ] [ ] | for#of                     | ForStatement
 [X] [ ] [ ] [ ] | continue                   | ContinueStatement
 [X] [ ] [ ] [ ] | break                      | BreakStatement
+[X] [ ] [ ] [ ] | label                      | LabelStatement
+[X] [ ] [ ] [ ] | goto                       | GotoStatement
+[X] [ ] [ ] [ ] | return                     | ReturnStatement

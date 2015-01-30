@@ -52,19 +52,3 @@ ForKeyValue
   = key:Identifier __ "," __ value:Identifier {
       return { key: key, value: value };
     }
-
-ContinueStatement
-  = ContinueToken EOS {
-      return append({ type: "continue" });
-    }
-  / ContinueToken _ label:Identifier EOS {
-      return append({ type: "continue", label: label });
-    }
-
-BreakStatement
-  = BreakToken EOS {
-      return append({ type: "break" });
-    }
-  / BreakToken _ label:Identifier EOS {
-      return append({ type: "break", label: label });
-    }
