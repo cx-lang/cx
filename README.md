@@ -3,8 +3,8 @@ It is based on C++, C#, TypeScript, JavaScript, HTML/CSS and HaXe.
 
 Version
 -------
-Development: 0.0.1<br>
-NPM Release: 0.0.0
+Development: 0.0.2<br>
+NPM Release: 0.0.1
 
 Progress
 --------
