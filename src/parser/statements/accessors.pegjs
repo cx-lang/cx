@@ -56,3 +56,7 @@ SetAccessor
   = SetToken __ setter:SetterBlock {
       return append(setter);
     }
+
+Accessor
+  = GetAccessor
+  / SetAccessor
