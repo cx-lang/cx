@@ -1,12 +1,15 @@
 VariableStatement
   = VarToken __ declarations:VariableDeclarations EOS? {
-      return append({ type: "variables", declarations: declarations });
+      return append({ type: "declarations", declarations: declarations });
     }
   / ConstToken __ declarations:VariableDeclarations EOS? {
-      return append({ type: "constants", declarations: declarations });
+      return append({ type: "declarations", constants: true, declarations: declarations });
     }
   / LetToken __ declarations:VariableDeclarations EOS? {
-      return append({ type: "lets", declarations: declarations });
+      return append({ type: "declarations", lets: true, declarations: declarations });
+    }
+  / typename:TypeName __ declarations:VariableDeclarations EOS? {
+      return append({ type: "declarations", return: typename, declarations: declarations });
     }
 
 VariableDeclarations
@@ -15,11 +18,36 @@ VariableDeclarations
     }
 
 VariableAssignment
-  = kind:(TypeName __)? identifier:Identifier value:(__ "=" __ AssignmentExpression)? {
+  = Identifier
+  / identifier:Identifier __ "=" __ "{" __ accessor:Accessor __ "}" {
+      accessor.identifier = identifier;
+      var variable = {
+        type: "variable",
+        identifier: identifier
+      };
+      variable[accessor.kind === 'getter' ? 'get' : 'set'] = accessor;
+      return append(variable);
+    }
+  / identifier:Identifier __ "=" __ "{" __ accessors:( GetAccessor __ ("," __)? SetAccessor ) __ "}" {
+      accessors[0].identifier = identifier;
+      accessors[3].identifier = identifier;
       return append({
         type: "variable",
         identifier: identifier,
-        kind: extractOptional(kind, 0),
-        value: extractOptional(value, 3)
+        get: accessors[0],
+        set: accessors[3]
       });
+    }
+  / identifier:Identifier __ "=" __ "{" __ accessors:( SetAccessor __ ("," __)? GetAccessor ) __ "}" {
+      accessors[0].identifier = identifier;
+      accessors[3].identifier = identifier;
+      return append({
+        type: "variable",
+        identifier: identifier,
+        get: accessors[3],
+        set: accessors[0]
+      });
+    }
+  / identifier:Identifier __ "=" __ value:AssignmentExpression {
+      return append({ type: "variable", identifier: identifier, value: value });
     }

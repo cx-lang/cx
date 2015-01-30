@@ -41,3 +41,5 @@ Column D) C++ Output
 [X] [ ] [ ] [ ] | lambda#thin                | LambdaExpression
 [X] [ ] [ ] [ ] | expression#assignment      | AssignmentExpression
 [X] [ ] [ ] [ ] | expression#sequence        | Expression
+[X] [ ] [ ] [ ] | declarations               | VariableStatement
+[X] [ ] [ ] [ ] | variable                   | VariableAssignment
