@@ -9,8 +9,7 @@ FunctionExpression
     }
 
 GeneratorExpression
-  = LambdaGeneratorExpression
-  / options:Options __ FunctionToken __ "*" __ args:FunctionArguments __ block:GeneratorBlock {
+  = options:Options __ FunctionToken __ "*" __ args:FunctionArguments __ block:GeneratorBlock {
       return append({ type: "generator", options: options, args: args, body: block });
     }
 
