@@ -55,3 +55,5 @@ Column D) C++ Output
 [X] [ ] [ ] [ ] | label                      | LabelStatement
 [X] [ ] [ ] [ ] | goto                       | GotoStatement
 [X] [ ] [ ] [ ] | return                     | ReturnStatement
+[X] [ ] [ ] [ ] | using                      | UsingStatement
+[X] [ ] [ ] [ ] | import                     | ImportStatement
