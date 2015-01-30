@@ -32,13 +32,13 @@ Git/Node/Make:
 Links
 -----
   
-  Homepage: https://erispa.github.io/cx<br>
-  DocumentUp: http://documentup.com/erispa/cx<br>
-  Wiki: https://github.com/erispa/cx/wiki<br>
-  Issues: https://github.com/erispa/cx/issues<br>
-  NPM: https://www.npmjs.com/package/cx-lang
+  Homepage: [https://erispa.github.io/cx](https://erispa.github.io/cx)<br>
+  DocumentUp: [http://documentup.com/erispa/cx](http://documentup.com/erispa/cx)<br>
+  Wiki: [https://github.com/erispa/cx/wiki](https://github.com/erispa/cx/wiki)<br>
+  Issues: [https://github.com/erispa/cx/issues](https://github.com/erispa/cx/issues)<br>
+  NPM: [https://www.npmjs.com/package/cx-lang](https://www.npmjs.com/package/cx-lang)
 
 License
 -------
 Copyright (c) 2015 Futago-za Ryuu, Erispa<br>
-The MIT License, http://opensource.org/licenses/MIT
+The MIT License, [http://opensource.org/licenses/MIT](http://opensource.org/licenses/MIT)
