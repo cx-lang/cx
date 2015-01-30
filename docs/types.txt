@@ -44,3 +44,11 @@ Column D) C++ Output
 [X] [ ] [ ] [ ] | declarations               | VariableStatement
 [X] [ ] [ ] [ ] | variable                   | VariableAssignment
 [X] [ ] [ ] [ ] | if                         | IfStatement
+[X] [ ] [ ] [ ] | do                         | DoStatement
+[X] [ ] [ ] [ ] | while                      | WhileStatement
+[X] [ ] [ ] [ ] | for                        | ForStatement
+[X] [ ] [ ] [ ] | for#in                     | ForStatement
+[X] [ ] [ ] [ ] | for#as                     | ForStatement
+[X] [ ] [ ] [ ] | for#of                     | ForStatement
+[X] [ ] [ ] [ ] | continue                   | ContinueStatement
+[X] [ ] [ ] [ ] | break                      | BreakStatement
