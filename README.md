@@ -9,9 +9,8 @@ NPM Release: 0.0.1
 Progress
 --------
 You can track progress for types in [docs/types.txt](docs/types.txt)<br>
-To view project changes see [docs/changelog.md](docs/changelog.md)<br>
-Parser rules not implemented are listed in [docs/parser-todo.md](docs/parser-todo.md)<br>
-Roadmap document can be viewed at [docs/roadmap.md](docs/roadmap.md)
+Roadmap document can be viewed at [docs/roadmap.md](docs/roadmap.md)<br>
+Changes can be viewed at: [commits/master](https://github.com/erispa/cx/commits/master) or [commits/dev](https://github.com/erispa/cx/commits/dev)
 
 Install
 -------

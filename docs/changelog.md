@@ -1,7 +1,4 @@
-0.0.0
------
+Changes can be tracked by looking through the commits:
 
-Released: December 15, 2014
-
-  * Initial commit and release.
-  * Published on npm as 'cx-lang' as placeholder
+[https://github.com/erispa/cx/commits/master](https://github.com/erispa/cx/commits/master)
+[https://github.com/erispa/cx/commits/dev](https://github.com/erispa/cx/commits/dev)
