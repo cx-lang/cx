@@ -13,21 +13,14 @@ PropertyList
 
 PropertyItem
   = IdentifierName
-  / MemberExpression
-  / CallExpression
-  / options:(Options __)? key:PropertyName __ ":" __ value:AssignmentExpression {
-      var property = {
+  / typename:(TypeName __)? key:PropertyName __ ":" __ value:AssignmentExpression {
+      return append({
         type: 'property',
         kind: 'data',
         key: key,
         value: value,
-        attributes: []
-      };
-      if ( options ) {
-        property.attributes = options[0].attributes;
-        property.returns = options[0].type;
-      }
-      return append(property);
+        returns: extractOptional(typename, 0)
+      });
     }
   / GetterProperty
   / SetterProperty
