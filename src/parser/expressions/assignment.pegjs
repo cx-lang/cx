@@ -4,7 +4,7 @@ KeyExpression
 
 AssignmentExpression
   = left:KeyExpression __ operator:AssignmentOperator __ right:AssignmentExpression {
-      return append({ type: "assignment", left: left, operator: operator, right: right });
+      return append({ type: "expression", kind: "assignment", left: left, operator: operator, right: right });
     }
   / KeyExpression
   / LambdaExpression

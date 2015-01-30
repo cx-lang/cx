@@ -35,9 +35,9 @@ Column D) C++ Output
 [X] [ ] [ ] [ ] | expression#update          | PostfixExpression
 [X] [ ] [ ] [ ] | expression#unary           | UnaryExpression
 [X] [ ] [ ] [ ] | expression#relational      | RelationalExpression
-[X] [ ] [ ] [ ] | expression#cast            | Expression
-[X] [ ] [ ] [ ] | expression#if              | Expression
+[X] [ ] [ ] [ ] | expression#cast            | OperatorExpression
+[X] [ ] [ ] [ ] | expression#ternary         | OperatorExpression
 [X] [ ] [ ] [ ] | lambda#fat                 | LambdaExpression
 [X] [ ] [ ] [ ] | lambda#thin                | LambdaExpression
-[X] [ ] [ ] [ ] | assignment                 | AssignmentExpression
-[X] [ ] [ ] [ ] | sequence                   | Expression
+[X] [ ] [ ] [ ] | expression#assignment      | AssignmentExpression
+[X] [ ] [ ] [ ] | expression#sequence        | Expression
