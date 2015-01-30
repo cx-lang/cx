@@ -20,7 +20,6 @@ Column D) C++ Output
 [X] [ ] [ ] [ ] | literal#SingleString       | SingleString
 [X] [ ] [ ] [ ] | literal#TemplateString     | TemplateString
 [X] [ ] [ ] [ ] | literal#RegularExpression  | RegExpLiteral
-[X] [ ] [ ] [ ] | attributes                 | AttributeLiteral
 [X] [ ] [ ] [ ] | this                       | PrimaryExpression
 [X] [ ] [ ] [ ] | array                      | ArrayLiteral
 [X] [ ] [ ] [ ] | object                     | ObjectLiteral
