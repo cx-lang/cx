@@ -8,11 +8,11 @@ UsingStatement
   / identifier:Identifier __ "=" __ UsingToken __ path:IdentifierPath EOS? {
       return append({ type: "using", path: path, identifier: identifier });
     }
-  / identifiers:DestructorExpression __ "=" __ UsingToken __ path:IdentifierPath EOS? {
-      return append({ type: "using", path: path, identifiers: identifiers });
+  / destructor:DestructorExpression __ "=" __ UsingToken __ path:IdentifierPath EOS? {
+      return append({ type: "using", path: path, destructor: destructor });
     }
-  / UsingToken __ identifiers:DestructorExpression __ OfToken __ path:ImportPath EOS? {
-      return append({ type: "import", path: path, identifiers: identifiers });
+  / UsingToken __ destructor:DestructorExpression __ OfToken __ path:ImportPath EOS? {
+      return append({ type: "import", path: path, destructor: destructor });
     }
 
 UsingBlockStatement

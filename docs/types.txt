@@ -64,3 +64,5 @@ Column D) C++ Output
 [X] [ ] [ ] [ ] | throw                      | ThrowStatement
 [X] [ ] [ ] [ ] | try                        | TryStatement
 [X] [ ] [ ] [ ] | catch                      | Catch
+[X] [ ] [ ] [ ] | await                      | AwaitCall
+[X] [ ] [ ] [ ] | yield                      | YieldStatement
