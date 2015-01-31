@@ -9,7 +9,7 @@ FunctionExpression
     }
 
 GeneratorExpression
-  = options:Options __ FunctionToken __ "*" __ args:FunctionArguments __ block:GeneratorBlock {
+  = options:Options __ FunctionToken __ "*" __ args:FunctionArguments __ block:Block {
       return append({ type: "generator", options: options, args: args, body: block });
     }
 

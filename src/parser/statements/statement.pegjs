@@ -1,34 +1,27 @@
 Statement
-  = Block
-  / AbstractStatement
-  / ClassStatement
-  / NamespaceStatement
-  / StructStatement
-  / EnumStatement
-  / ExternStatement
-  / FunctionStatement
-  / ImportStatement
-  / MacroStatement
-  / UsingStatement
+  = LabelStatement
   / GetterStatement
   / SetterStatement
+  / Block
+  / AwaitStatement
+  / DestructorStatement
+  / UsingStatement
+  / UsingBlockStatement
+  / ImportStatement
   / VariableStatement
   / ExpressionStatement
   / IfStatement
-  / IterationStatement
-  / UsingStatement
+  / DoStatement
+  / WhileStatement
+  / ForStatement
+  / ContinueStatement
+  / BreakStatement
+  / GotoStatement
+  / ReturnStatement
   / SwitchStatement
   / ThrowStatement
   / TryStatement
-  / PreprocessorStatement
-  / CompilerStatement
-
-GeneratorStatement
-  = YieldStatement
-  / Statement
+  / YieldStatement
 
 StatementList
   = first:Statement rest:(__ Statement)* { return buildList(first, rest, 1); }
-
-GeneratorStatementList
-  = first:GeneratorStatement rest:(__ GeneratorStatement)* { return buildList(first, rest, 1); }
