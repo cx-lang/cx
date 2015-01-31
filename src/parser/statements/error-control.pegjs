@@ -14,12 +14,20 @@ TryStatement
     }
 
 Catch
-  = CatchToken __ "(" __ param:(Identifier __)? ")" __ body:Block {
+  = CatchToken __ "(" __ param:(CatchArgument __)? ")" __ body:Block {
       return append({
         type:  "catch",
         param: extractOptional(param, 0),
         body:  body
       });
+    }
+
+CatchArgument "argument"
+  = constant:(ConstToken __)? typename:(TypeName __)? identifier:Identifier {
+      identifier.type = "argument";
+      identifier.constant = constant != null;
+      identifier.returns = extractOptional(typename, 0);
+      return append(identifier);
     }
 
 Finally
