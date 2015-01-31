@@ -16,6 +16,7 @@ Keyword
   / ExternToken
   / FalseToken
   / FinalToken
+  / FinallyToken
   / ForToken
   / FriendToken
   / FunctionToken

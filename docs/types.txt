@@ -61,3 +61,6 @@ Column D) C++ Output
 [X] [ ] [ ] [ ] | destructor-item            | DestructorItem
 [X] [ ] [ ] [ ] | switch                     | SwitchStatement
 [X] [ ] [ ] [ ] | case                       | CaseClause
+[X] [ ] [ ] [ ] | throw                      | ThrowStatement
+[X] [ ] [ ] [ ] | try                        | TryStatement
+[X] [ ] [ ] [ ] | catch                      | Catch
