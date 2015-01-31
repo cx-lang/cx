@@ -1,6 +1,7 @@
 Keyword
   = AsToken
   / AbstractToken
+  / AsyncToken
   / AwaitToken
   / BreakToken
   / CaseToken
