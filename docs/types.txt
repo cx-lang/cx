@@ -59,3 +59,5 @@ Column D) C++ Output
 [X] [ ] [ ] [ ] | import                     | ImportStatement
 [X] [ ] [ ] [ ] | destructor                 | DestructorExpression
 [X] [ ] [ ] [ ] | destructor-item            | DestructorItem
+[X] [ ] [ ] [ ] | switch                     | SwitchStatement
+[X] [ ] [ ] [ ] | case                       | CaseClause
