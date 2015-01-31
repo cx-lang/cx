@@ -57,3 +57,5 @@ Column D) C++ Output
 [X] [ ] [ ] [ ] | return                     | ReturnStatement
 [X] [ ] [ ] [ ] | using                      | UsingStatement
 [X] [ ] [ ] [ ] | import                     | ImportStatement
+[X] [ ] [ ] [ ] | destructor                 | DestructorExpression
+[X] [ ] [ ] [ ] | destructor-item            | DestructorItem

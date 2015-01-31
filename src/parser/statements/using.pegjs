@@ -8,10 +8,10 @@ UsingStatement
   / identifier:Identifier __ "=" __ UsingToken __ path:IdentifierPath EOS? {
       return append({ type: "using", path: path, identifier: identifier });
     }
-  / identifiers:TypedDestructor __ "=" __ UsingToken __ path:IdentifierPath EOS? {
+  / identifiers:DestructorExpression __ "=" __ UsingToken __ path:IdentifierPath EOS? {
       return append({ type: "using", path: path, identifiers: identifiers });
     }
-  / UsingToken __ identifiers:TypedDestructor __ OfToken __ path:ImportPath EOS? {
+  / UsingToken __ identifiers:DestructorExpression __ OfToken __ path:ImportPath EOS? {
       return append({ type: "import", path: path, identifiers: identifiers });
     }
 

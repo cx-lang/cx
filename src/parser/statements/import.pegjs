@@ -11,7 +11,7 @@ ImportStatement
   / UsingToken __ identifier:Identifier __ "=" __ ImportToken __ path:ImportPath EOS? {
       return append({ type: "import", path: path, identifier: identifier });
     }
-  / UsingToken? __ identifiers:TypedDestructor __ "=" __ ImportToken __ path:ImportPath EOS? {
+  / UsingToken? __ identifiers:DestructorExpression __ "=" __ ImportToken __ path:ImportPath EOS? {
       return append({ type: "import", path: path, identifiers: identifiers });
     }
 
