@@ -5,9 +5,25 @@
 // parser entry point
 
   start
-    = __ elements:(__ NamespaceElement __)* __ {
-        return append({ type: 'namespace', name: 'global', elements: extractOptional(elements, 1), api: 'cx-0' });
-      }
+    = elements:NamespaceElements {
+      return {
+        type: 'program',
+        name: options.filename,
+        program: {
+          type: 'namespace',
+          identifier: {
+            type: 'identifier',
+            value: 'global',
+            pos: {
+              start: { offset: 0, line: 1, column: 1 },
+              end: { offset: 0, line: 1, column: 1 },
+              range: [0, 0]
+            }
+          },
+          elements: elements
+        }
+      };
+    }
 
 @import "grammer"
 
@@ -16,3 +32,5 @@
 @import "expressions"
 
 @import "statements"
+
+@import "oop"

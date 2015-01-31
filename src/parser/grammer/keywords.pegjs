@@ -1,6 +1,7 @@
 Keyword
   = AsToken
   / AbstractToken
+  / AsyncToken
   / AwaitToken
   / BreakToken
   / CaseToken
@@ -15,21 +16,28 @@ Keyword
   / EnumToken
   / ExternToken
   / FalseToken
+  / FinalToken
+  / FinallyToken
   / ForToken
   / FriendToken
   / FunctionToken
   / GetToken
+  / GotoToken
   / IfToken
-  / InstanceofToken
   / ImportToken
   / InToken
   / InlineToken
+  / InstanceofToken
   / InterfaceToken
+  / InternalToken
   / LetToken
   / MacroToken
   / NamespaceToken
   / NewToken
   / NullToken
+  / OfToken
+  / OperatorToken
+  / PartialToken
   / PrivateToken
   / ProtectedToken
   / PublicToken

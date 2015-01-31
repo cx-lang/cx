@@ -1,5 +1,6 @@
 PrimaryExpression
   = ThisToken { return append({ type: "this" }); }
+  / SuperToken { return append({ type: "super" }); }
   / GenericName
   / Literal
   / ArrayLiteral

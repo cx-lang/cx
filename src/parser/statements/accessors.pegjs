@@ -9,58 +9,41 @@ GetterBlock
 
 SetterBlock
   = param:("(" __ FunctionArgument __ ")" __)? block:Block {
-      if ( param ) {
-        param = param[2];
-      } else {
-        param = { type: 'argument', key: 'value' };
-      }
       return {
         type: 'accessor',
         kind: 'setter',
-        param: param,
+        param: param ? param[2] || { type: 'argument', key: 'value' },
         body: block.body
       };
     }
 
 GetterStatement
-  = options:(Options __)? GetToken __ identifier:Identifier __ getter:GetterBlock {
+  = typename:(TypeName __)? GetToken __ identifier:Identifier __ getter:GetterBlock {
       getter.identifier = identifier;
-      if ( options ) {
-        getter.attributes = options[0].attributes;
-        getter.returns = options[0].type;
-      }
+      getter.returns = extractOptional(typename, 0);
       return append(getter);
     }
 
 SetterStatement
-  = options:(Options __)? SetToken __ identifier:Identifier __ setter:SetterBlock {
+  = typename:(TypeName __)? SetToken __ identifier:Identifier __ setter:SetterBlock {
       setter.identifier = identifier;
-      if ( options ) {
-        setter.attributes = options[0].attributes;
-        setter.returns = options[0].type;
-      }
+      setter.returns = extractOptional(typename, 0);
       return append(setter);
     }
 
 GetterProperty
-  = options:(Options __)? GetToken __ key:PropertyName __ getter:GetterBlock {
+  = typename:(TypeName __)? GetToken __ key:PropertyName __ getter:GetterBlock {
       getter.type = 'property';
       getter.identifier = key;
-      if ( options ) {
-        getter.attributes = options[0].attributes;
-        getter.returns = options[0].type;
-      }
+      getter.returns = extractOptional(typename, 0);
       return append(getter);
     }
 
 SetterProperty
-  = options:(Options __)? SetToken __ key:PropertyName __ setter:SetterBlock {
-      getter.type = 'property';
+  = typename:(TypeName __)? SetToken __ key:PropertyName __ setter:SetterBlock {
+      setter.type = 'property';
       setter.identifier = key;
-      if ( options ) {
-        setter.attributes = options[0].attributes;
-        setter.returns = options[0].type;
-      }
+      setter.returns = extractOptional(typename, 0);
       return append(setter);
     }
 
@@ -73,3 +56,7 @@ SetAccessor
   = SetToken __ setter:SetterBlock {
       return append(setter);
     }
+
+Accessor
+  = GetAccessor
+  / SetAccessor

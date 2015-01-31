@@ -1,5 +1,5 @@
 /*
-  Copyright (c) 2014 Futago-za Ryuu <futagoza.ryuu@gmail.com>
+  Copyright (c) 2015 Futago-za Ryuu <futagoza.ryuu@gmail.com>
   https://github.com/erispa/cx, v__VERSION__
   
   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -46,7 +46,7 @@ if ( typeof global === "undefined" ) var global = this;
   }
 
   // Universal Module Definition (UMD) to support AMD, CommonJS/Node.js, Rhino, and plain browser loading
-  cx = require('cx/browser');
+  cx = require('cx/lib/browser');
   cx.require = require;
   if ( typeof define === 'function' ) {
     factory = function ( ) { return cx; };

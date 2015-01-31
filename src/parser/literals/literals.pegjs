@@ -2,10 +2,9 @@ Literal
   = NullLiteral
   / BooleanLiteral
   / NumericLiteral
+  / CharLiteral
   / StringLiteral
   / RegExpLiteral
-  / AttributeLiteral
-  / CharLiteral
 
 NullLiteral
   = NullToken { return append({ type: "literal", kind: "Null" }); }
@@ -15,6 +14,8 @@ BooleanLiteral
   / FalseToken { return append({ type: "literal", kind: "Boolean", value: false }); }
 
 @import "numbers.pegjs"
+
+@import "char.pegjs"
 
 @import "strings.pegjs"
 

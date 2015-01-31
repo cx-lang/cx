@@ -7,7 +7,7 @@ GenericName
 
 TemplateArguments
   = "<" __ ">" { return []; }
-  / "<" __ first:GenericType rest:(__ "," __ GenericType)* __ ">" {
+  / "<" __ first:TypeName rest:(__ "," __ TypeName)* __ ">" {
       return buildList(first, rest, 3);
     }
 

@@ -3,42 +3,67 @@ Column B) VM Method
 Column C) JavaScript Output
 Column D) C++ Output
 
- A   B   C   D  |          type#kind         |      rule
-----------------|----------------------------|-------------------
-[X] [ ] [ ] [ ] | identifier                 | IdentifierName
-[X] [ ] [ ] [ ] | path                       | IdentifierPath
-[X] [ ] [ ] [ ] | literal#Null               | NullLiteral
-[X] [ ] [ ] [ ] | literal#Boolean            | BooleanLiteral
-[X] [ ] [ ] [ ] | literal#HexInteger         | HexIntegerLiteral
-[X] [ ] [ ] [ ] | literal#SignedMultiFloat   | DecimalLiteral
-[X] [ ] [ ] [ ] | literal#UnsignedMultiFloat | DecimalLiteral
-[X] [ ] [ ] [ ] | literal#SignedFloat        | DecimalLiteral
-[X] [ ] [ ] [ ] | literal#UnsignedFloat      | DecimalLiteral
-[X] [ ] [ ] [ ] | literal#SignedInteger      | DecimalLiteral
-[X] [ ] [ ] [ ] | literal#UnsignedInteger    | DecimalLiteral
-[X] [ ] [ ] [ ] | literal#DoubleString       | DoubleString
-[X] [ ] [ ] [ ] | literal#SingleString       | SingleString
-[X] [ ] [ ] [ ] | literal#TemplateString     | TemplateString
-[X] [ ] [ ] [ ] | literal#RegularExpression  | RegExpLiteral
-[X] [ ] [ ] [ ] | attributes                 | AttributeLiteral
-[X] [ ] [ ] [ ] | this                       | PrimaryExpression
-[X] [ ] [ ] [ ] | array                      | ArrayLiteral
-[X] [ ] [ ] [ ] | object                     | ObjectLiteral
-[X] [ ] [ ] [ ] | property#data              | PropertyItem
-[X] [ ] [ ] [ ] | property#getter            | GetterProperty
-[X] [ ] [ ] [ ] | property#setter            | SetterProperty
-[X] [ ] [ ] [ ] | accessor#getter            | GetterBlock
-[X] [ ] [ ] [ ] | accessor#setter            | SetterBlock
-[X] [ ] [ ] [ ] | new                        | NewExpression
-[X] [ ] [ ] [ ] | member                     | MemberExpression
-[X] [ ] [ ] [ ] | call                       | CallExpression
-[X] [ ] [ ] [ ] | literal#char               | CharLiteral
-[X] [ ] [ ] [ ] | expression#update          | PostfixExpression
-[X] [ ] [ ] [ ] | expression#unary           | UnaryExpression
-[X] [ ] [ ] [ ] | expression#relational      | RelationalExpression
-[X] [ ] [ ] [ ] | expression#cast            | Expression
-[X] [ ] [ ] [ ] | expression#if              | Expression
-[X] [ ] [ ] [ ] | lambda#fat                 | LambdaExpression
-[X] [ ] [ ] [ ] | lambda#thin                | LambdaExpression
-[X] [ ] [ ] [ ] | assignment                 | AssignmentExpression
-[X] [ ] [ ] [ ] | sequence                   | Expression
+   section   |  A   B   C   D  |          type#kind         |      rule
+-------------|-----------------|----------------------------|-------------------
+   grammer   | [X] [ ] [ ] [ ] | identifier                 | IdentifierName
+             | [X] [ ] [ ] [ ] | path                       | IdentifierPath
+   literals  | [X] [ ] [ ] [ ] | literal#Null               | NullLiteral
+             | [X] [ ] [ ] [ ] | literal#Boolean            | BooleanLiteral
+             | [X] [ ] [ ] [ ] | literal#HexInteger         | HexIntegerLiteral
+             | [X] [ ] [ ] [ ] | literal#SignedMultiFloat   | DecimalLiteral
+             | [X] [ ] [ ] [ ] | literal#UnsignedMultiFloat | DecimalLiteral
+             | [X] [ ] [ ] [ ] | literal#SignedFloat        | DecimalLiteral
+             | [X] [ ] [ ] [ ] | literal#UnsignedFloat      | DecimalLiteral
+             | [X] [ ] [ ] [ ] | literal#SignedInteger      | DecimalLiteral
+             | [X] [ ] [ ] [ ] | literal#UnsignedInteger    | DecimalLiteral
+             | [X] [ ] [ ] [ ] | literal#Char               | CharLiteral
+             | [X] [ ] [ ] [ ] | literal#DoubleString       | DoubleString
+             | [X] [ ] [ ] [ ] | literal#SingleString       | SingleString
+             | [X] [ ] [ ] [ ] | literal#TemplateString     | TemplateString
+             | [X] [ ] [ ] [ ] | literal#RegularExpression  | RegExpLiteral
+ expressions | [X] [ ] [ ] [ ] | this                       | PrimaryExpression
+             | [X] [ ] [ ] [ ] | array                      | ArrayLiteral
+             | [X] [ ] [ ] [ ] | object                     | ObjectLiteral
+             | [X] [ ] [ ] [ ] | property#data              | PropertyItem
+             | [X] [ ] [ ] [ ] | property#getter            | GetterProperty
+             | [X] [ ] [ ] [ ] | property#setter            | SetterProperty
+             | [X] [ ] [ ] [ ] | new                        | NewExpression
+             | [X] [ ] [ ] [ ] | member                     | MemberExpression
+             | [X] [ ] [ ] [ ] | call                       | CallExpression
+             | [X] [ ] [ ] [ ] | expression#update          | PostfixExpression
+             | [X] [ ] [ ] [ ] | expression#unary           | UnaryExpression
+             | [X] [ ] [ ] [ ] | expression#relational      | RelationalExpression
+             | [X] [ ] [ ] [ ] | expression#cast            | OperatorExpression
+             | [X] [ ] [ ] [ ] | expression#ternary         | OperatorExpression
+             | [X] [ ] [ ] [ ] | lambda#fat                 | LambdaExpression
+             | [X] [ ] [ ] [ ] | lambda#thin                | LambdaExpression
+             | [X] [ ] [ ] [ ] | expression#assignment      | AssignmentExpression
+             | [X] [ ] [ ] [ ] | expression#sequence        | Expression
+ statements  | [X] [ ] [ ] [ ] | accessor#getter            | GetterBlock
+             | [X] [ ] [ ] [ ] | accessor#setter            | SetterBlock
+             | [X] [ ] [ ] [ ] | declarations               | VariableStatement
+             | [X] [ ] [ ] [ ] | variable                   | VariableAssignment
+             | [X] [ ] [ ] [ ] | if                         | IfStatement
+             | [X] [ ] [ ] [ ] | do                         | DoStatement
+             | [X] [ ] [ ] [ ] | while                      | WhileStatement
+             | [X] [ ] [ ] [ ] | for                        | ForStatement
+             | [X] [ ] [ ] [ ] | for#in                     | ForStatement
+             | [X] [ ] [ ] [ ] | for#as                     | ForStatement
+             | [X] [ ] [ ] [ ] | for#of                     | ForStatement
+             | [X] [ ] [ ] [ ] | continue                   | ContinueStatement
+             | [X] [ ] [ ] [ ] | break                      | BreakStatement
+             | [X] [ ] [ ] [ ] | label                      | LabelStatement
+             | [X] [ ] [ ] [ ] | goto                       | GotoStatement
+             | [X] [ ] [ ] [ ] | return                     | ReturnStatement
+             | [X] [ ] [ ] [ ] | using                      | UsingStatement
+             | [X] [ ] [ ] [ ] | import                     | ImportStatement
+             | [X] [ ] [ ] [ ] | expression#destruct        | DestructorExpression
+             | [X] [ ] [ ] [ ] | destructor                 | DestructorItem
+             | [X] [ ] [ ] [ ] | switch                     | SwitchStatement
+             | [X] [ ] [ ] [ ] | case                       | CaseClause
+             | [X] [ ] [ ] [ ] | throw                      | ThrowStatement
+             | [X] [ ] [ ] [ ] | try                        | TryStatement
+             | [X] [ ] [ ] [ ] | catch                      | Catch
+             | [X] [ ] [ ] [ ] | await                      | AwaitCall
+             | [X] [ ] [ ] [ ] | yield                      | YieldStatement
+             | [X] [ ] [ ] [ ] | super                      | PrimaryExpression
