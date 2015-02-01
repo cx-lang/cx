@@ -1,9 +1,9 @@
 StringLiteral "string"
-  = modifier:AlphaCharacter? string:(DoubleString / SingleString / TemplateString) {
+  = CharLiteral
+  / modifier:AlphaCharacter? string:(DoubleString / SingleString / TemplateString) {
       if ( modifier ) string.modifier = modifier;
       return append(string);
     }
-  / CharLiteral
 
 DoubleString
   = '"' chars:DoubleStringCharacter* '"' {

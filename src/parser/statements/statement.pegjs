@@ -7,7 +7,6 @@ Statement
   / DestructorStatement
   / UsingStatement
   / UsingBlockStatement
-  / ImportStatement
   / VariableStatement
   / ExpressionStatement
   / IfStatement

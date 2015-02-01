@@ -1,24 +1,38 @@
 Namespace
-  = NamespaceToken __ identifier:IdentifierPath __ "{" __ elements:NamespaceElements __ "}" {
+  = NamespaceToken __ identifier:IdentifierPath __ elements:NamespaceBlock {
       return append({ type: 'namespace', identifier: identifier, elements: elements });
     }
 
-NamespaceElements
-  = elements:(__ NamespaceElement)* __ {
-      return elements ? extractList(elements, 1) : [];
-    }
+NamespaceBlock
+  = "{" __ "}" { return []; }
+  = "{" __ first:NamespaceElement rest:(__ NamespaceElement)* __ "}" { return buildList(first, rest, 1); }
 
 NamespaceElement
   = Namespace
-  / Abstract
-  / Class
-  / Interface
-  / Macro
-  / Struct
-  / Enum
-  / Extern
-  / Using
-  / Directive
-  / Import
-  / Function
-  / Variable
+  / ImportStatement
+  / UsingStatement
+  / NamespaceIfStatement
+  / OOPVariableStatement
+  / OOPGetterStatement
+  / OOPSetterStatement
+  / FunctionStatement
+  / TypedefStatement
+  / ExternStatement
+  / EnumStatement
+  / StructStatement
+  / ClassStatement
+  / InterfaceStatement
+
+NamespaceIfStatement
+  = IfToken __ "(" __ test:Expression __ ")" __ left:NamespaceIfBlock right:(__ ElseToken __ NamespaceIfBlock)? {
+      return append({
+        type: "if",
+        condition: test,
+        consequent: left,
+        alternate: extractOptional(right, 3)
+      });
+    }
+
+NamespaceIfBlock
+  = NamespaceBlock
+  / e:NamespaceElement { return [e]; }

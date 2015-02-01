@@ -17,8 +17,8 @@ CallExpression
       / __ "[" __ property:Expression __ "]" {
           return append({ type: "member", property: property, computed: true });
         }
-      / __ "." __ property:IdentifierName {
-          return append({ type: "member", property: property, computed: false });
+      / __ o:("." / "->") __ property:IdentifierName {
+          return append({ type: "member", property: property, computed: false, operator: o });
         }
     )* {
       return buildTree(first, rest, function(result, element){

@@ -21,24 +21,32 @@ Column D) C++ Output
              | [X] [ ] [ ] [ ] | literal#SingleString       | SingleString
              | [X] [ ] [ ] [ ] | literal#TemplateString     | TemplateString
              | [X] [ ] [ ] [ ] | literal#RegularExpression  | RegExpLiteral
- expressions | [X] [ ] [ ] [ ] | this                       | PrimaryExpression
+ expressions | [X] [ ] [ ] [ ] | global                     | PrimaryExpression
+             | [X] [ ] [ ] [ ] | internal                   | PrimaryExpression
+             | [X] [ ] [ ] [ ] | super                      | PrimaryExpression
+             | [X] [ ] [ ] [ ] | this                       | PrimaryExpression
+             | [X] [ ] [ ] [ ] | command                    | CompilerCommand
              | [X] [ ] [ ] [ ] | array                      | ArrayLiteral
              | [X] [ ] [ ] [ ] | object                     | ObjectLiteral
              | [X] [ ] [ ] [ ] | property#data              | PropertyItem
              | [X] [ ] [ ] [ ] | property#getter            | GetterProperty
              | [X] [ ] [ ] [ ] | property#setter            | SetterProperty
-             | [X] [ ] [ ] [ ] | new                        | NewExpression
              | [X] [ ] [ ] [ ] | member                     | MemberExpression
+             | [X] [ ] [ ] [ ] | new                        | NewExpression
              | [X] [ ] [ ] [ ] | call                       | CallExpression
              | [X] [ ] [ ] [ ] | expression#update          | PostfixExpression
              | [X] [ ] [ ] [ ] | expression#unary           | UnaryExpression
              | [X] [ ] [ ] [ ] | expression#relational      | RelationalExpression
              | [X] [ ] [ ] [ ] | expression#cast            | OperatorExpression
-             | [X] [ ] [ ] [ ] | expression#ternary         | OperatorExpression
-             | [X] [ ] [ ] [ ] | lambda#fat                 | LambdaExpression
-             | [X] [ ] [ ] [ ] | lambda#thin                | LambdaExpression
+             | [X] [ ] [ ] [ ] | expression#ternary         | TernaryExpression
+             | [X] [ ] [ ] [ ] | lambda#function            | LambdaExpression
+             | [X] [ ] [ ] [ ] | lambda#macro               | LambdaArrowExpression
+             | [X] [ ] [ ] [ ] | lambda#async               | LambdaArrowExpression
+             | [X] [ ] [ ] [ ] | lambda#arrow               | LambdaArrowExpression
              | [X] [ ] [ ] [ ] | expression#assignment      | AssignmentExpression
              | [X] [ ] [ ] [ ] | expression#sequence        | Expression
+             | [X] [ ] [ ] [ ] | expression#destruct        | DestructorExpression
+             | [X] [ ] [ ] [ ] | destructor                 | DestructorItem
  statements  | [X] [ ] [ ] [ ] | accessor#getter            | GetterBlock
              | [X] [ ] [ ] [ ] | accessor#setter            | SetterBlock
              | [X] [ ] [ ] [ ] | declarations               | VariableStatement
@@ -57,8 +65,6 @@ Column D) C++ Output
              | [X] [ ] [ ] [ ] | return                     | ReturnStatement
              | [X] [ ] [ ] [ ] | using                      | UsingStatement
              | [X] [ ] [ ] [ ] | import                     | ImportStatement
-             | [X] [ ] [ ] [ ] | expression#destruct        | DestructorExpression
-             | [X] [ ] [ ] [ ] | destructor                 | DestructorItem
              | [X] [ ] [ ] [ ] | switch                     | SwitchStatement
              | [X] [ ] [ ] [ ] | case                       | CaseClause
              | [X] [ ] [ ] [ ] | throw                      | ThrowStatement
@@ -66,4 +72,18 @@ Column D) C++ Output
              | [X] [ ] [ ] [ ] | catch                      | Catch
              | [X] [ ] [ ] [ ] | await                      | AwaitCall
              | [X] [ ] [ ] [ ] | yield                      | YieldStatement
-             | [X] [ ] [ ] [ ] | super                      | PrimaryExpression
+             | [X] [ ] [ ] [ ] | friend                     | FriendStatement
+     oop     | [X] [ ] [ ] [ ] | extern                     | ExternStatement
+             | [X] [ ] [ ] [ ] | function                   | FunctionExpression
+             | [X] [ ] [ ] [ ] | macro                      | FunctionExpression
+             | [X] [ ] [ ] [ ] | async                      | FunctionExpression
+             | [X] [ ] [ ] [ ] | generator                  | GeneratorExpression
+             | [X] [ ] [ ] [ ] | argument                   | FunctionArgument
+             | [X] [ ] [ ] [ ] | typedef                    | TypedefStatement
+             | [X] [ ] [ ] [ ] | enum                       | EnumStatement
+             | [X] [ ] [ ] [ ] | struct                     | StructHead
+             | [X] [ ] [ ] [ ] | class                      | ClassHead
+             | [X] [ ] [ ] [ ] | interface                  | InterfaceHead
+             | [X] [ ] [ ] [ ] | operator#function          | OperatorOverloadStatement
+             | [X] [ ] [ ] [ ] | operator#lambda            | OverloadFunctionHead
+             | [X] [ ] [ ] [ ] | namespace                  | Namespace

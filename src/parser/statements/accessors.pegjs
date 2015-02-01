@@ -18,14 +18,14 @@ SetterBlock
     }
 
 GetterStatement
-  = typename:(TypeName __)? GetToken __ identifier:Identifier __ getter:GetterBlock {
+  = typename:(TypeName __)? GetToken __ identifier:Identifier __ getter:GetterBlock EOS? {
       getter.identifier = identifier;
       getter.returns = extractOptional(typename, 0);
       return append(getter);
     }
 
 SetterStatement
-  = typename:(TypeName __)? SetToken __ identifier:Identifier __ setter:SetterBlock {
+  = typename:(TypeName __)? SetToken __ identifier:Identifier __ setter:SetterBlock EOS? {
       setter.identifier = identifier;
       setter.returns = extractOptional(typename, 0);
       return append(setter);

@@ -1,6 +1,5 @@
 Keyword
   = AsToken
-  / AbstractToken
   / AsyncToken
   / AwaitToken
   / BreakToken
@@ -22,6 +21,7 @@ Keyword
   / FriendToken
   / FunctionToken
   / GetToken
+  / GlobalToken
   / GotoToken
   / IfToken
   / ImportToken
@@ -51,6 +51,7 @@ Keyword
   / ThrowToken
   / TrueToken
   / TryToken
+  / TypedefToken
   / TypeofToken
   / UsingToken
   / VarToken
