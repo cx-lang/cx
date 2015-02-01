@@ -37,7 +37,7 @@ GeneratorExpression
 
 FunctionBody
   = generics:(GenericArguments __)? args:FunctionArguments __ block:Block {
-      return { generics: generics, args: args, block: block }
+      return { generics: extractOptional(generics, 0), args: args, block: block }
     }
 
 FunctionArguments "arguments"
