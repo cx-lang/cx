@@ -11,8 +11,8 @@ MemberExpression
         __ "[" __ property:Expression __ "]" {
           return append({ property: property, computed: true });
         }
-      / __ "." __ property:IdentifierName {
-          return append({ property: property, computed: false });
+      / __ o:("." / "->") __ property:IdentifierName {
+          return append({ property: property, computed: false, operator: o });
         }
     )*
     {

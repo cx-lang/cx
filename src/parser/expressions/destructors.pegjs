@@ -13,7 +13,7 @@ DestructorItem
       return append({
         type: "destructor",
         returns: extractOptional(typename, 0),
-        key: extractOptional(key, 0),
+        identifier: extractOptional(key, 0),
         property: property
       });
     }

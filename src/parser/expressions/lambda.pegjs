@@ -9,12 +9,11 @@ LambdaExpression
   / LambdaArrowExpression
 
 LambdaArrowExpression
-  = args:(LamdaArguments __)? operators:("=>" / "->") __ statement:Statement {
+  = args:(LamdaArguments __)? "=>" __ statement:Statement {
       return append({
         type: "lambda",
         kind: "arrow",
         args: args ? args[0] || [],
-        operators: operators,
         body: statement
       });
     }
