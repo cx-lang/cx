@@ -6,7 +6,7 @@ function preprocess ( input ) {
   function createOutput ( filename, data ) {
     var content = "";
     if ( data.trim() !== '' ) {
-      content += "// @source: " + filename.replace(SRC_DIR, '.').replace(/\\/g, '/') + "\n\n  " + indent(data);
+      content += "// @source: " + filename.replace(SRC_DIR, '.').replace(/\\/g, '/') + "\n\n" + indent(data);
     }
     return content;
   }
