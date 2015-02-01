@@ -44,3 +44,9 @@ function toCharCode ( character ) {
     }
     return codeHex;
 }
+
+function buildModifiers ( first, rest, index ) {
+  return buildTree([first], rest, function(modifiers, modifier){
+    return modifiers.indexOf(modifier[index]) === -1 ? modifiers.concat(modifier[index]) : modifiers;
+  });
+}

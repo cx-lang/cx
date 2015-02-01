@@ -40,8 +40,8 @@ Column D) C++ Output
              | [X] [ ] [ ] [ ] | expression#cast            | OperatorExpression
              | [X] [ ] [ ] [ ] | expression#ternary         | OperatorExpression
              | [X] [ ] [ ] [ ] | lambda#function            | LambdaExpression
-             | [X] [ ] [ ] [ ] | lambda#macro               | LambdaExpression
-             | [X] [ ] [ ] [ ] | lambda#async               | LambdaExpression
+             | [X] [ ] [ ] [ ] | lambda#macro               | LambdaArrowExpression
+             | [X] [ ] [ ] [ ] | lambda#async               | LambdaArrowExpression
              | [X] [ ] [ ] [ ] | lambda#arrow               | LambdaArrowExpression
              | [X] [ ] [ ] [ ] | expression#assignment      | AssignmentExpression
              | [X] [ ] [ ] [ ] | expression#sequence        | Expression
@@ -80,3 +80,4 @@ Column D) C++ Output
              | [X] [ ] [ ] [ ] | argument                   | FunctionArgument
              | [X] [ ] [ ] [ ] | typedef                    | TypedefStatement
              | [X] [ ] [ ] [ ] | enum                       | EnumStatement
+             | [X] [ ] [ ] [ ] | struct                     | StructHead
