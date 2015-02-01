@@ -72,6 +72,7 @@ Column D) C++ Output
              | [X] [ ] [ ] [ ] | catch                      | Catch
              | [X] [ ] [ ] [ ] | await                      | AwaitCall
              | [X] [ ] [ ] [ ] | yield                      | YieldStatement
+             | [X] [ ] [ ] [ ] | friend                     | FriendStatement
      oop     | [X] [ ] [ ] [ ] | extern                     | ExternStatement
              | [X] [ ] [ ] [ ] | function                   | FunctionExpression
              | [X] [ ] [ ] [ ] | macro                      | FunctionExpression
