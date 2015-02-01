@@ -27,11 +27,10 @@ FunctionExpression
     }
 
 GeneratorExpression
-  = returns:(TypeName __)? FunctionToken __ "*" __ identifier:Identifier __ fb:FunctionBody {
+  = FunctionToken __ "*" __ identifier:Identifier __ fb:FunctionBody {
       return append({
         type: "generator",
         identifier: identifier,
-        returns: extractOptional(returns, 0),
         generics: fb.generics,
         args: fb.args,
         body: fb.block

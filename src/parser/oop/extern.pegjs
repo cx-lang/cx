@@ -4,11 +4,10 @@ ExternStatement
     }
 
 ExternExpression
-  = isof:(TypeName __)? FunctionToken __ "*" __ id:Identifier __ targs:(GenericArguments __)? cargs:FunctionArguments {
+  = FunctionToken __ "*" __ id:Identifier __ targs:(GenericArguments __)? cargs:FunctionArguments {
       return append({
         type: "generator",
         identifier: id,
-        returns: extractOptional(isof, 0),
         generics: extractOptional(targs, 0),
         args: cargs
       });
