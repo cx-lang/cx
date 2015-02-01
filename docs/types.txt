@@ -83,3 +83,4 @@ Column D) C++ Output
              | [X] [ ] [ ] [ ] | enum                       | EnumStatement
              | [X] [ ] [ ] [ ] | struct                     | StructHead
              | [X] [ ] [ ] [ ] | class                      | ClassHead
+             | [X] [ ] [ ] [ ] | interface                  | InterfaceHead

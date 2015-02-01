@@ -19,7 +19,8 @@ ClassExtends
   = ":" first:TypeName rest:(__ "," __ TypeName)* { return buildList(first, rest, 3); }
 
 ClassBlock
-  = "{" __ first:ClassElement rest:(__ ClassElement)* __ "}" { return buildList(first, rest, 1); }
+  = "{" __ "}" { return []; }
+  / "{" __ first:ClassElement rest:(__ ClassElement)* __ "}" { return buildList(first, rest, 1); }
 
 ClassElement
   = StructElement
@@ -28,7 +29,11 @@ ClassElement
   / ExternStatement
 
 ClassExternStatement
-  = object:ClassHead properties:OOPExternBlock {
+  = object:ClassHead properties:ClassExternBlock {
       object.properties = properties;
       return append(object);
     }
+
+ClassExternBlock
+  = "{" __ "}" { return []; }
+  / "{" __ first:ExternStatement rest:(__ ExternStatement)* __ "}" { return buildList(first, rest, 1); }

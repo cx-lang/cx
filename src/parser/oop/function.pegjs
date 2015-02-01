@@ -54,8 +54,8 @@ FunctionBody
     }
 
 FunctionArguments "arguments"
-  = "(" __ ")" { return []; }
-  = "(" __ first:FunctionArgument rest:(__ "," __ FunctionArgument)* __ ")" { return buildList(first, rest, 3); }
+  = "{" __ "}" { return []; }
+  / "(" __ first:FunctionArgument rest:(__ "," __ FunctionArgument)* __ ")" { return buildList(first, rest, 3); }
 
 FunctionArgument "argument"
   = constant:(ConstToken __)? typename:(TypeName __)? identifier:Identifier value:(__ "=" __ AssignmentExpression)? {

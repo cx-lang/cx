@@ -16,7 +16,8 @@ StructHead
     }
 
 StructBlock
-  = "{" __ first:StructElement rest:(__ StructElement)* __ "}" { return buildList(first, rest, 1); }
+  = "{" __ "}" { return []; }
+  / "{" __ first:StructElement rest:(__ StructElement)* __ "}" { return buildList(first, rest, 1); }
 
 StructElement
   = OOPVariableStatement
@@ -34,7 +35,8 @@ StructExternStatement
     }
 
 StructExternBlock
-  = "{" __ first:StructExternElement rest:(__ StructExternElement)* __ "}" { return buildList(first, rest, 1); }
+  = "{" __ "}" { return []; }
+  / "{" __ first:StructExternElement rest:(__ StructExternElement)* __ "}" { return buildList(first, rest, 1); }
 
 StructExternElement
   = OOPVariableExternStatement
