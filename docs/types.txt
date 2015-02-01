@@ -25,6 +25,7 @@ Column D) C++ Output
              | [X] [ ] [ ] [ ] | internal                   | PrimaryExpression
              | [X] [ ] [ ] [ ] | super                      | PrimaryExpression
              | [X] [ ] [ ] [ ] | this                       | PrimaryExpression
+             | [X] [ ] [ ] [ ] | command                    | CompilerCommand
              | [X] [ ] [ ] [ ] | array                      | ArrayLiteral
              | [X] [ ] [ ] [ ] | object                     | ObjectLiteral
              | [X] [ ] [ ] [ ] | property#data              | PropertyItem

@@ -3,6 +3,7 @@ PrimaryExpression
   / InternalToken { return append({ type: "internal" }); }
   / SuperToken { return append({ type: "super" }); }
   / ThisToken { return append({ type: "this" }); }
+  / CompilerCommand
   / GenericName
   / Literal
   / ArrayLiteral
