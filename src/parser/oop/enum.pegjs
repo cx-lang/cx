@@ -9,13 +9,17 @@ EnumStatement
     }
 
 EnumBlock
-  = "(" __ first:EnumArgument rest:(__ ","? __ EnumArgument)* __ ")" { return buildList(first, rest, 3); }
+  = "{" __ first:EnumArgument rest:(__ ","? __ EnumArgument)* __ "}" { return buildList(first, rest, 3); }
 
 EnumArgument
-  = identifier:IdentifierName value:(__ (":" / "=") __ EnumValue)? {
+  = identifier:IdentifierName value:(__ (":" / "=") __ NumericLiteral)? {
       return append({ type: "variable", identifier: identifier, value: extractOptional(value, 3) });
     }
 
-EnumValue
-  = StringLiteral
-  / NumericLiteral
+EnumExternBlock
+  = "{" __ first:EnumExternArgument rest:(__ ","? __ EnumExternArgument)* __ "}" { return buildList(first, rest, 3); }
+
+EnumExternArgument
+  = identifier:IdentifierName {
+      return append({ type: "variable", identifier: identifier });
+    }

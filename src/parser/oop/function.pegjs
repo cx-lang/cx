@@ -1,22 +1,24 @@
 FunctionStatement
-  = FunctionExpression
-  / GeneratorExpression
+  = GeneratorExpression
+  / FunctionExpression
 
 FunctionExpression
   = LambdaExpression
-  / inline:(InlineToken __)? returns:(TypeName __)? FunctionToken __ fb:FunctionBody {
+  / inline:(InlineToken __)? returns:(TypeName __)? FunctionToken? __ identifier:Identifier __ fb:FunctionBody {
       return append({
         type: "function",
         inline: inline != null,
+        identifier: identifier,
         returns: extractOptional(returns, 0),
         generics: fb.generics,
         args: fb.args,
         body: fb.block
       });
     }
-  / returns:(TypeName __)? type:(MacroToken / AsyncToken) __ fb:FunctionBody {
+  / returns:(TypeName __)? token:(MacroToken / AsyncToken) __ identifier:Identifier __ fb:FunctionBody {
       return append({
-        type: type,
+        type: token,
+        identifier: identifier,
         returns: extractOptional(returns, 0),
         generics: fb.generics,
         args: fb.args,
@@ -25,9 +27,10 @@ FunctionExpression
     }
 
 GeneratorExpression
-  = returns:(TypeName __)? FunctionToken __ "*" __ fb:FunctionBody {
+  = returns:(TypeName __)? FunctionToken __ "*" __ identifier:Identifier __ fb:FunctionBody {
       return append({
         type: "generator",
+        identifier: identifier,
         returns: extractOptional(returns, 0),
         generics: fb.generics,
         args: fb.args,

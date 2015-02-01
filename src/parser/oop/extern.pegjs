@@ -4,19 +4,38 @@ ExternStatement
     }
 
 ExternExpression
-  = returns:(TypeName __)? FunctionToken __ star:("*" __)? generics:(GenericArguments __)? args:FunctionArguments {
+  = isof:(TypeName __)? FunctionToken __ "*" __ id:Identifier __ targs:(GenericArguments __)? cargs:FunctionArguments {
       return append({
-        type: star ? "generator" : "function",
-        returns: extractOptional(returns, 0),
-        generics: extractOptional(generics, 0),
-        args: args
+        type: "generator",
+        identifier: id,
+        returns: extractOptional(isof, 0),
+        generics: extractOptional(targs, 0),
+        args: cargs
       });
     }
-  / returns:(TypeName __)? type:(MacroToken / AsyncToken) __ generics:(GenericArguments __)? args:FunctionArguments {
+  / isof:(TypeName __)? FunctionToken? __ id:Identifier __ targs:(GenericArguments __)? cargs:FunctionArguments {
       return append({
-        type: type,
-        returns: extractOptional(returns, 0),
-        generics: extractOptional(generics, 0),
-        args: args
+        type: "function",
+        identifier: id,
+        returns: extractOptional(isof, 0),
+        generics: extractOptional(targs, 0),
+        args: cargs
+      });
+    }
+  / isof:(TypeName __)? token:(MacroToken / AsyncToken) __ id:Identifier __ targs:(GenericArguments __)? cargs:FunctionArguments {
+      return append({
+        type: token,
+        identifier: id,
+        returns: extractOptional(isof, 0),
+        generics: extractOptional(targs, 0),
+        args: cargs
+      });
+    }
+  / partial:(PartialToken __)? EnumToken __ identifier:(Identifier __)? block:EnumExternBlock EOS? {
+      return append({
+        type: "enum",
+        partial: partial != null,
+        identifier: extractOptional(identifier, 0),
+        variables: block
       });
     }
