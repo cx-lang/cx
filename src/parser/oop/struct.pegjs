@@ -24,6 +24,7 @@ StructElement
   / OOPSetterStatement
   / FunctionStatement
   / EnumStatement
+  / FriendStatement
   / ExternStructStatement
 
 StructExternStatement
@@ -41,4 +42,5 @@ StructExternElement
   / OOPSetterExternStatement
   / FunctionExternStatement
   / EnumExternStatement
+  / FriendStatement
   / ExternStructStatement
