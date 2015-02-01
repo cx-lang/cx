@@ -20,7 +20,9 @@ StructBlock
   / "{" __ first:StructElement rest:(__ StructElement)* __ "}" { return buildList(first, rest, 1); }
 
 StructElement
-  = OOPVariableStatement
+  = UsingStatement
+  / StructIfStatement
+  / OOPVariableStatement
   / OOPGetterStatement
   / OOPSetterStatement
   / OperatorOverloadStatement
@@ -28,6 +30,20 @@ StructElement
   / EnumStatement
   / FriendStatement
   / ExternStructStatement
+
+StructIfStatement
+  = IfToken __ "(" __ test:Expression __ ")" __ left:StructIfBlock right:(__ ElseToken __ StructIfBlock)? {
+      return append({
+        type: "if",
+        condition: test,
+        consequent: left,
+        alternate: extractOptional(right, 3)
+      });
+    }
+
+StructIfBlock
+  = StructBlock
+  / e:StructElement { return [e]; }
 
 StructExternStatement
   = struct:StructHead properties:StructExternBlock {
@@ -40,7 +56,9 @@ StructExternBlock
   / "{" __ first:StructExternElement rest:(__ StructExternElement)* __ "}" { return buildList(first, rest, 1); }
 
 StructExternElement
-  = OOPVariableExternStatement
+  = UsingStatement
+  / StructExternIfStatement
+  / OOPVariableExternStatement
   / OOPGetterExternStatement
   / OOPSetterExternStatement
   / OperatorOverloadExtern
@@ -48,3 +66,17 @@ StructExternElement
   / EnumExternStatement
   / FriendStatement
   / ExternStructStatement
+
+StructExternIfStatement
+  = IfToken __ "(" __ test:Expression __ ")" __ left:StructExternIfBlock right:(__ ElseToken __ StructExternIfBlock)? {
+      return append({
+        type: "if",
+        condition: test,
+        consequent: left,
+        alternate: extractOptional(right, 3)
+      });
+    }
+
+StructExternIfBlock
+  = StructExternBlock
+  / e:StructExternElement { return [e]; }

@@ -12,7 +12,8 @@ TemplateArguments
     }
 
 TypeName
-  = IdentifierPath
+  = CompilerCommand
+  / IdentifierPath
   / GenericName
 
 GenericArguments

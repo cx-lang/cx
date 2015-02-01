@@ -23,10 +23,25 @@ ClassBlock
   / "{" __ first:ClassElement rest:(__ ClassElement)* __ "}" { return buildList(first, rest, 1); }
 
 ClassElement
-  = StructElement
+  = ClassIfStatement
+  / StructElement
   / ClassStatement
   / InterfaceStatement
   / ExternStatement
+
+ClassIfStatement
+  = IfToken __ "(" __ test:Expression __ ")" __ left:ClassIfBlock right:(__ ElseToken __ ClassIfBlock)? {
+      return append({
+        type: "if",
+        condition: test,
+        consequent: left,
+        alternate: extractOptional(right, 3)
+      });
+    }
+
+ClassIfBlock
+  = ClassBlock
+  / e:ClassElement { return [e]; }
 
 ClassExternStatement
   = object:ClassHead properties:ClassExternBlock {
@@ -36,4 +51,23 @@ ClassExternStatement
 
 ClassExternBlock
   = "{" __ "}" { return []; }
-  / "{" __ first:ExternStatement rest:(__ ExternStatement)* __ "}" { return buildList(first, rest, 1); }
+  / "{" __ first:ClassExternElement rest:(__ ClassExternElement)* __ "}" { return buildList(first, rest, 1); }
+
+ClassExternElement
+  = ClassExternIfStatement
+  / InterfaceStatement
+  / ExternElement
+
+ClassExternIfStatement
+  = IfToken __ "(" __ test:Expression __ ")" __ left:ClassExternIfBlock right:(__ ElseToken __ ClassExternIfBlock)? {
+      return append({
+        type: "if",
+        condition: test,
+        consequent: left,
+        alternate: extractOptional(right, 3)
+      });
+    }
+
+ClassExternIfBlock
+  = ClassExternBlock
+  / e:ClassExternElement { return [e]; }

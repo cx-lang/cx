@@ -38,7 +38,7 @@ Column D) C++ Output
              | [X] [ ] [ ] [ ] | expression#unary           | UnaryExpression
              | [X] [ ] [ ] [ ] | expression#relational      | RelationalExpression
              | [X] [ ] [ ] [ ] | expression#cast            | OperatorExpression
-             | [X] [ ] [ ] [ ] | expression#ternary         | OperatorExpression
+             | [X] [ ] [ ] [ ] | expression#ternary         | TernaryExpression
              | [X] [ ] [ ] [ ] | lambda#function            | LambdaExpression
              | [X] [ ] [ ] [ ] | lambda#macro               | LambdaArrowExpression
              | [X] [ ] [ ] [ ] | lambda#async               | LambdaArrowExpression
