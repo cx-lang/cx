@@ -86,3 +86,4 @@ Column D) C++ Output
              | [X] [ ] [ ] [ ] | interface                  | InterfaceHead
              | [X] [ ] [ ] [ ] | operator#function          | OperatorOverloadStatement
              | [X] [ ] [ ] [ ] | operator#lambda            | OverloadFunctionHead
+             | [X] [ ] [ ] [ ] | namespace                  | Namespace

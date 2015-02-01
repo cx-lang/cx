@@ -10,15 +10,16 @@ NamespaceElements
 
 NamespaceElement
   = Namespace
-  / Abstract
-  / Class
-  / Interface
-  / Macro
-  / Struct
-  / Enum
-  / Extern
-  / Using
-  / Directive
-  / Import
-  / Function
-  / Variable
+  / ImportStatement
+  / UsingStatement
+  / IfStatement
+  / OOPVariableStatement
+  / OOPGetterStatement
+  / OOPSetterStatement
+  / FunctionStatement
+  / TypedefStatement
+  / ExternStatement
+  / EnumStatement
+  / StructStatement
+  / ClassStatement
+  / InterfaceStatement
