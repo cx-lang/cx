@@ -4,26 +4,30 @@ FunctionStatement
 
 FunctionExpression
   = LambdaExpression
-  / options:Options __ FunctionToken __ args:FunctionArguments __ block:Block {
-      return append({ type: "function", options: options, args: args, body: block });
+  / returns:TypeName __ type:(FunctionToken / MacroToken / AsyncToken) __ fb:FunctionBody {
+      return append({ type: type, returns: returns, args: fb.args, body: fb.block });
     }
 
 GeneratorExpression
-  = options:Options __ FunctionToken __ "*" __ args:FunctionArguments __ block:Block {
-      return append({ type: "generator", options: options, args: args, body: block });
+  = returns:TypeName __ FunctionToken __ "*" __ fb:FunctionBody {
+      return append({ type: "generator", returns: returns, args: fb.args, body: fb.block });
+    }
+
+FunctionBody
+  = args:FunctionArguments __ block:Block {
+      return { args: args, block: block }
     }
 
 FunctionArguments "arguments"
   = "(" __ first:FunctionArgument rest:(__ "," __ FunctionArgument)* __ ")" { return buildList(first, rest, 3); }
 
 FunctionArgument "argument"
-  = constant:(ConstToken __)? variable:VariableAssignment {
-      variable.type = "argument";
-      variable.constant = constant != null;
-      return variable;
-    }
-
-FunctionBody
-  = args:FunctionArguments __ statements:Block {
-      return { args: args, statements: statements }
+  = constant:(ConstToken __)? typename:(TypeName __)? identifier:Identifier value:(__ "=" __ AssignmentExpression)? {
+      return append({
+        type: "argument",
+        constant: constant != null,
+        returns: extractOptional(typename, 0),
+        identifier: identifier,
+        value: extractOptional(value, 3)
+      });
     }

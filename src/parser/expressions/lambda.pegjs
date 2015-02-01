@@ -1,9 +1,6 @@
 LambdaExpression
-  = FunctionToken __ args:FunctionArguments __ block:Block {
-      return append({ type: "lambda", kind: "function", args: args, body: block });
-    }
-  / kind:(MacroToken / AsyncToken) __ args:FunctionArguments __ block:Block {
-      return append({ type: "lambda", kind: kind, args: args, body: block });
+  = kind:(FunctionToken / MacroToken / AsyncToken) __ fb:FunctionBody {
+      return append({ type: "lambda", kind: kind, args: fb.args, body: fb.block });
     }
   / kind:(MacroToken / AsyncToken) __ lambda:LambdaArrowExpression {
       lambda.kind = kind;
