@@ -39,8 +39,10 @@ Column D) C++ Output
              | [X] [ ] [ ] [ ] | expression#relational      | RelationalExpression
              | [X] [ ] [ ] [ ] | expression#cast            | OperatorExpression
              | [X] [ ] [ ] [ ] | expression#ternary         | OperatorExpression
-             | [X] [ ] [ ] [ ] | lambda#fat                 | LambdaExpression
-             | [X] [ ] [ ] [ ] | lambda#thin                | LambdaExpression
+             | [X] [ ] [ ] [ ] | lambda#function            | LambdaExpression
+             | [X] [ ] [ ] [ ] | lambda#async               | LambdaExpression
+             | [X] [ ] [ ] [ ] | lambda#macro               | LambdaExpression
+             | [X] [ ] [ ] [ ] | lambda#arrow               | LambdaArrowExpression
              | [X] [ ] [ ] [ ] | expression#assignment      | AssignmentExpression
              | [X] [ ] [ ] [ ] | expression#sequence        | Expression
              | [X] [ ] [ ] [ ] | expression#destruct        | DestructorExpression

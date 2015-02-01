@@ -1,9 +1,25 @@
 LambdaExpression
-  = args:(LamdaArguments __)? "=>" __ statement:Statement {
-      return append({ type: "lambda", kind: "fat", args: args ? args[0] || [], body: statement });
+  = FunctionToken __ args:FunctionArguments __ block:Block {
+      return append({ type: "lambda", kind: "function", args: args, body: block });
     }
-  / args:(LamdaArguments __)? "->" __ statement:Statement {
-      return append({ type: "lambda", kind: "thin", args: args ? args[0] || [], body: statement });
+  / kind:(MacroToken / AsyncToken) __ args:FunctionArguments __ block:Block {
+      return append({ type: "lambda", kind: kind, args: args, body: block });
+    }
+  / kind:(MacroToken / AsyncToken) __ lambda:LambdaArrowExpression {
+      lambda.kind = kind;
+      return append(lambda);
+    }
+  / LambdaArrowExpression
+
+LambdaArrowExpression
+  = args:(LamdaArguments __)? operators:("=>" / "->") __ statement:Statement {
+      return append({
+        type: "lambda",
+        kind: "arrow",
+        args: args ? args[0] || [],
+        operators: operators,
+        body: statement
+      });
     }
 
 LamdaArguments
