@@ -1,6 +1,8 @@
 PrimaryExpression
-  = ThisToken { return append({ type: "this" }); }
+  = GlobalToken { return append({ type: "global" }); }
+  / InternalToken { return append({ type: "internal" }); }
   / SuperToken { return append({ type: "super" }); }
+  / ThisToken { return append({ type: "this" }); }
   / GenericName
   / Literal
   / ArrayLiteral

@@ -22,6 +22,7 @@ Keyword
   / FriendToken
   / FunctionToken
   / GetToken
+  / GlobalToken
   / GotoToken
   / IfToken
   / ImportToken
