@@ -52,6 +52,7 @@ Keyword
   / ThrowToken
   / TrueToken
   / TryToken
+  / TypedefToken
   / TypeofToken
   / UsingToken
   / VarToken
