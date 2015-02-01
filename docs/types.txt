@@ -82,3 +82,4 @@ Column D) C++ Output
              | [X] [ ] [ ] [ ] | typedef                    | TypedefStatement
              | [X] [ ] [ ] [ ] | enum                       | EnumStatement
              | [X] [ ] [ ] [ ] | struct                     | StructHead
+             | [X] [ ] [ ] [ ] | class                      | ClassHead

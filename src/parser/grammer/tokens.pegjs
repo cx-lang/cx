@@ -1,5 +1,4 @@
 AsToken         = "as"
-AbstractToken   = "abstract"
 AsyncToken      = "async"
 AwaitToken      = "await"
 BreakToken      = "break"
