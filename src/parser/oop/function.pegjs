@@ -50,11 +50,11 @@ FunctionHead
 FunctionBody
   = head:FunctionHead __ block:Block {
       head.block = block;
-      return block;
+      return head;
     }
 
 FunctionArguments "arguments"
-  = "{" __ "}" { return []; }
+  = "(" __ ")" { return []; }
   / "(" __ first:FunctionArgument rest:(__ "," __ FunctionArgument)* __ ")" { return buildList(first, rest, 3); }
 
 FunctionArgument "argument"

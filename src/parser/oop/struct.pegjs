@@ -23,6 +23,7 @@ StructElement
   = OOPVariableStatement
   / OOPGetterStatement
   / OOPSetterStatement
+  / OperatorOverloadStatement
   / FunctionStatement
   / EnumStatement
   / FriendStatement
@@ -42,6 +43,7 @@ StructExternElement
   = OOPVariableExternStatement
   / OOPGetterExternStatement
   / OOPSetterExternStatement
+  / OperatorOverloadExtern
   / FunctionExternStatement
   / EnumExternStatement
   / FriendStatement

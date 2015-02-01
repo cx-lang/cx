@@ -7,6 +7,7 @@ ExternElement
   = OOPVariableExternStatement
   / OOPGetterExternStatement
   / OOPSetterExternStatement
+  / OperatorOverloadExtern
   / FunctionExternStatement
   / EnumExternStatement
   / StructExternStatement
