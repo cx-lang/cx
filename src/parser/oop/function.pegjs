@@ -69,7 +69,7 @@ FunctionArgument "argument"
     }
 
 FunctionExternStatement
-  = modifiers:PropertyModifiers? FunctionToken __ "*" __ fh:FunctionHead {
+  = modifiers:(PropertyModifiers __)? FunctionToken __ "*" __ fh:FunctionHead {
       return append({
         type: "generator",
         modifiers: extractOptional(modifiers, 0) || [],
@@ -78,7 +78,7 @@ FunctionExternStatement
         args: fh.args
       });
     }
-  / modifiers:PropertyModifiers? isof:(TypeName __)? FunctionToken? __ fh:FunctionHead {
+  / modifiers:(PropertyModifiers __)? isof:(TypeName __)? FunctionToken? __ fh:FunctionHead {
       return append({
         type: "function",
         modifiers: extractOptional(modifiers, 0) || [],
@@ -88,7 +88,7 @@ FunctionExternStatement
         args: fh.args
       });
     }
-  / modifiers:PropertyModifiers? isof:(TypeName __)? AsyncToken __ fh:FunctionHead {
+  / modifiers:(PropertyModifiers __)? isof:(TypeName __)? AsyncToken __ fh:FunctionHead {
       return append({
         type: "async",
         modifiers: extractOptional(modifiers, 0) || [],

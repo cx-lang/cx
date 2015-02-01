@@ -4,7 +4,9 @@ ExternStatement
     }
 
 ExternElement
-  = VariableExternStatement
+  = OOPVariableExternStatement
+  / OOPGetterExternStatement
+  / OOPSetterExternStatement
   / FunctionExternStatement
   / EnumExternStatement
   / StructExternStatement

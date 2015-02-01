@@ -19,7 +19,9 @@ StructBlock
   = "{" __ first:StructElement rest:(__ StructElement)* __ "}" { return buildList(first, rest, 1); }
 
 StructElement
-  = VariableStatement
+  = OOPVariableStatement
+  / OOPGetterStatement
+  / OOPSetterStatement
   / FunctionStatement
   / EnumStatement
   / ExternStructStatement
@@ -34,7 +36,9 @@ StructExternBlock
   = "{" __ first:StructExternElement rest:(__ StructExternElement)* __ "}" { return buildList(first, rest, 1); }
 
 StructExternElement
-  = VariableExternStatement
+  = OOPVariableExternStatement
+  / OOPGetterExternStatement
+  / OOPSetterExternStatement
   / FunctionExternStatement
   / EnumExternStatement
   / ExternStructStatement
