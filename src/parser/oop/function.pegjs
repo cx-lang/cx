@@ -4,18 +4,40 @@ FunctionStatement
 
 FunctionExpression
   = LambdaExpression
-  / returns:TypeName __ type:(FunctionToken / MacroToken / AsyncToken) __ fb:FunctionBody {
-      return append({ type: type, returns: returns, args: fb.args, body: fb.block });
+  / inline:(InlineToken __)? returns:(TypeName __)? FunctionToken __ fb:FunctionBody {
+      return append({
+        type: "function",
+        inline: inline != null,
+        returns: extractOptional(returns, 0),
+        generics: fb.generics,
+        args: fb.args,
+        body: fb.block
+      });
+    }
+  / returns:(TypeName __)? type:(MacroToken / AsyncToken) __ fb:FunctionBody {
+      return append({
+        type: type,
+        returns: extractOptional(returns, 0),
+        generics: fb.generics,
+        args: fb.args,
+        body: fb.block
+      });
     }
 
 GeneratorExpression
-  = returns:TypeName __ FunctionToken __ "*" __ fb:FunctionBody {
-      return append({ type: "generator", returns: returns, args: fb.args, body: fb.block });
+  = returns:(TypeName __)? FunctionToken __ "*" __ fb:FunctionBody {
+      return append({
+        type: "generator",
+        returns: extractOptional(returns, 0),
+        generics: fb.generics,
+        args: fb.args,
+        body: fb.block
+      });
     }
 
 FunctionBody
-  = args:FunctionArguments __ block:Block {
-      return { args: args, block: block }
+  = generics:(GenericArguments __)? args:FunctionArguments __ block:Block {
+      return { generics: generics, args: args, block: block }
     }
 
 FunctionArguments "arguments"
