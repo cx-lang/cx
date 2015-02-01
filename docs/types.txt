@@ -78,3 +78,4 @@ Column D) C++ Output
              | [X] [ ] [ ] [ ] | generator                  | GeneratorExpression
              | [X] [ ] [ ] [ ] | argument                   | FunctionArgument
              | [X] [ ] [ ] [ ] | typedef                    | TypedefStatement
+             | [X] [ ] [ ] [ ] | enum                       | EnumStatement
