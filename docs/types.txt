@@ -77,3 +77,4 @@ Column D) C++ Output
              | [X] [ ] [ ] [ ] | async                      | FunctionExpression
              | [X] [ ] [ ] [ ] | generator                  | GeneratorExpression
              | [X] [ ] [ ] [ ] | argument                   | FunctionArgument
+             | [X] [ ] [ ] [ ] | typedef                    | TypedefStatement
