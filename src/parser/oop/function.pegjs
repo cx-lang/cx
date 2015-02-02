@@ -19,7 +19,7 @@ FunctionExpression
       });
     }
   / modifiers:(MethodModifiers __)? returns:(TypeName __)? token:(MacroToken / AsyncToken) __ fb:FunctionBody {
-      return append({
+      var fn = {
         type: token,
         modifiers: extractOptional(modifiers, 0) || [],
         identifier: fb.identifier,
@@ -27,7 +27,11 @@ FunctionExpression
         generics: fb.generics,
         args: fb.args,
         body: fb.block
-      });
+      };
+      if ( token === "macro" ) {
+        fn.kind = "function";
+      }
+      return append(fn);
     }
 
 GeneratorExpression

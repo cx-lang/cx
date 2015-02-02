@@ -75,7 +75,6 @@ Column D) C++ Output
              | [X] [ ] [ ] [ ] | friend                     | FriendStatement
      oop     | [X] [ ] [ ] [ ] | extern                     | ExternStatement
              | [X] [ ] [ ] [ ] | function                   | FunctionExpression
-             | [X] [ ] [ ] [ ] | macro                      | FunctionExpression
              | [X] [ ] [ ] [ ] | async                      | FunctionExpression
              | [X] [ ] [ ] [ ] | generator                  | GeneratorExpression
              | [X] [ ] [ ] [ ] | argument                   | FunctionArgument
@@ -84,6 +83,9 @@ Column D) C++ Output
              | [X] [ ] [ ] [ ] | struct                     | StructHead
              | [X] [ ] [ ] [ ] | class                      | ClassHead
              | [X] [ ] [ ] [ ] | interface                  | InterfaceHead
+             | [X] [ ] [ ] [ ] | macro#function             | FunctionExpression
+             | [X] [ ] [ ] [ ] | macro#class                | ClassStatement
              | [X] [ ] [ ] [ ] | operator#function          | OperatorOverloadStatement
+             | [X] [ ] [ ] [ ] | operator#macro             | OperatorOverloadStatement
              | [X] [ ] [ ] [ ] | operator#lambda            | OverloadFunctionHead
              | [X] [ ] [ ] [ ] | namespace                  | Namespace
