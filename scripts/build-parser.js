@@ -44,7 +44,8 @@ function preprocess ( input ) {
   return parseFile(input, dirname(input));
 }
 
-var parser = preprocess(join(SRC_DIR, 'parser', 'start.pegjs'));
+var apiVersion = readFile(join(SRC_DIR, 'api-version.txt'));
+var parser = preprocess(join(SRC_DIR, 'parser', 'start.pegjs')).replace(/__API-VERSION__/g, apiVersion);
 
 writeFile(join(SRC_DIR, 'parser.pegjs'), parser);
 

@@ -3,6 +3,7 @@ Program
       return {
         type: 'program',
         name: options.filename,
+        api: '__API-VERSION__',
         program: {
           type: 'namespace',
           identifier: {
