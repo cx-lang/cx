@@ -1,5 +1,5 @@
 OperatorOverloadStatement
-  = modifiers:(MethodModifiers __)? returns:(TypeName __)? o:OverloadOperator __ lamda:LambdaArrow {
+  = modifiers:(MethodModifiers __)? returns:(TypeName __)? o:OverloadOperator __ lamda:LambdaArrow EOS? {
       return append({
         type: "operator",
         kind: "lamda",
@@ -9,17 +9,18 @@ OperatorOverloadStatement
         lamda: lamda
       });
     }
-  / head:OverloadFunctionHead __ block:Block {
-      head.body = block;
-      return append(head);
+  / modifiers:(MethodModifiers __)? macro:(MacroToken __)? fn:OverloadFunctionHead __ block:Block EOS? {
+      fn.modifiers = extractOptional(modifiers, 0) || [];
+      if ( macro ) fn.kind = "macro";
+      fn.body = block;
+      return append(fn);
     }
 
 OverloadFunctionHead
-  = modifiers:(MethodModifiers __)? returns:(TypeName __)? o:OverloadOperator __ args:FunctionArguments {
+  = returns:(TypeName __)? o:OverloadOperator __ args:FunctionArguments {
       return {
         type: "operator",
         kind: "function",
-        modifiers: extractOptional(modifiers, 0) || [],
         operator: o,
         returns: extractOptional(returns, 0),
         args: args
@@ -37,4 +38,7 @@ OverloadOperators
   / UpdateOperator
 
 OperatorOverloadExtern
-  = head:OverloadFunctionHead EOS? { return append(head); }
+  =  modifiers:(MethodModifiers __)? fn:OverloadFunctionHead EOS? {
+      fn.modifiers = extractOptional(modifiers, 0) || [];
+      return append(fn);
+    }
