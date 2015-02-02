@@ -17,4 +17,4 @@ InterfaceHead
 
 InterfaceBlock
   = "{" __ "}" { return []; }
-  = "{" __ first:ExternElement rest:(__ ExternElement)* __ "}" { return buildList(first, rest, 1); }
+  / "{" __ first:ExternElement rest:(__ ExternElement)* __ "}" { return buildList(first, rest, 1); }

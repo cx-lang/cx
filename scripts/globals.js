@@ -15,7 +15,7 @@ global.buildParser = function ( grammer ) {
       cache: false, output: "source", optimize: "speed", allowedStartRules: ["start"]
     }) + ";\n";
   } catch ( e ) {
-    console.error("\n" + e.name + " @ " + e.line + ":" + e.column + ") " + e.message + "\n");
+    console.error("\n" + e.name + (typeof e.line === 'number' ? " @ " + e.line + ":" + e.column + ") " : ": ") + e.message + "\n");
     process.exit(1);
   }
 };
