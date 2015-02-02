@@ -1,5 +1,6 @@
 VariableStatement
-  = VarToken __ declarations:VariableDeclarations EOS? {
+  = AwaitCall
+  / VarToken __ declarations:VariableDeclarations EOS? {
       return append({ type: "declarations", declarations: declarations });
     }
   / ConstToken __ declarations:VariableDeclarations EOS? {
@@ -19,6 +20,7 @@ VariableDeclarations
 
 VariableAssignment
   = Identifier
+  / AwaitAssignment
   / identifier:Identifier __ "=" __ "{" __ accessor:Accessor __ "}" {
       accessor.identifier = identifier;
       var variable = {

@@ -5,7 +5,7 @@ Namespace
 
 NamespaceBlock
   = "{" __ "}" { return []; }
-  = "{" __ first:NamespaceElement rest:(__ NamespaceElement)* __ "}" { return buildList(first, rest, 1); }
+  / "{" __ first:NamespaceElement rest:(__ NamespaceElement)* __ "}" { return buildList(first, rest, 1); }
 
 NamespaceElement
   = Namespace

@@ -10,9 +10,14 @@ global.indent = function ( data, tabs ) {
 };
 
 global.buildParser = function ( grammer ) {
-  return "module.exports = " + pegjs.buildParser(grammer, {
-    cache: false, output: "source", optimize: "speed", allowedStartRules: ["start"]
-  }) + ";\n";
+  try {
+    return "module.exports = " + pegjs.buildParser(grammer, {
+      cache: false, output: "source", optimize: "speed", allowedStartRules: ["start"]
+    }) + ";\n";
+  } catch ( e ) {
+    console.error("\n" + e.name + (typeof e.line === 'number' ? " @ " + e.line + ":" + e.column + ") " : ": ") + e.message + "\n");
+    process.exit(1);
+  }
 };
 
 global.minify = function ( data ) {

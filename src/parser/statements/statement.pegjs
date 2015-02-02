@@ -3,7 +3,6 @@ Statement
   / GetterStatement
   / SetterStatement
   / Block
-  / AwaitStatement
   / DestructorStatement
   / UsingStatement
   / UsingBlockStatement

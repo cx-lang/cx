@@ -1,14 +1,18 @@
 ClassStatement
-  = object:ClassHead properties:ClassBlock {
+  = m:(ObjectModifiers __)? macro:(MacroToken __)? ClassToken __ object:ClassHead properties:ClassBlock {
+      if ( macro ) {
+        object.type = "macro";
+        object.kind = "class";
+      }
+      object.modifiers = extractOptional(m, 0) || [];
       object.properties = properties;
       return append(object);
     }
 
 ClassHead
-  = m:(ObjectModifiers __)? ClassToken __ id:Identifier __ targs:(GenericArguments __)? ce:(ClassExtends __)? {
+  = id:Identifier __ targs:(GenericArguments __)? ce:(ClassExtends __)? {
       return {
         type: "class",
-        modifiers: extractOptional(m, 0) || [],
         identifier: id,
         generics: extractOptional(targs, 0),
         extends: extractOptional(ce, 0)
@@ -44,7 +48,8 @@ ClassIfBlock
   / e:ClassElement { return [e]; }
 
 ClassExternStatement
-  = object:ClassHead properties:ClassExternBlock {
+  = m:(ObjectModifiers __)? ClassToken __ object:ClassHead properties:ClassExternBlock {
+      object.modifiers = extractOptional(m, 0) || [];
       object.properties = properties;
       return append(object);
     }
