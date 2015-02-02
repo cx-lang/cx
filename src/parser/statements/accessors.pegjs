@@ -12,7 +12,7 @@ SetterBlock
       return {
         type: 'accessor',
         kind: 'setter',
-        param: param ? param[2] || { type: 'argument', key: 'value' },
+        param: param ? param[2] : { type: 'argument', key: 'value' },
         body: block.body
       };
     }

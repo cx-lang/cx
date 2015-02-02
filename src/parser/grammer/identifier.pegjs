@@ -8,7 +8,7 @@ IdentifierName "identifier"
 
 IdentifierPath
   = first:Identifier rest:(__ "." __ IdentifierName)+ {
-      return append({ type: 'path', value: buildList(first, parts, 3) });
+      return append({ type: 'path', value: buildList(first, rest, 3) });
     }
   / Identifier
 

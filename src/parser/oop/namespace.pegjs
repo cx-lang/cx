@@ -1,5 +1,5 @@
 Namespace
-  = NamespaceToken __ identifier:IdentifierPath __ elements:NamespaceBlock {
+  = NamespaceToken __ identifier:IdentifierPath __ elements:NamespaceBlock EOS? {
       return append({ type: 'namespace', identifier: identifier, elements: elements });
     }
 

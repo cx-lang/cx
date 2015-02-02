@@ -7,12 +7,22 @@ FunctionExpression
       lamda.modifiers = extractOptional(modifiers, 0) || [];
       return append(lamda);
     }
-  / modifiers:(MethodModifiers __)? returns:(TypeName __)? FunctionToken? __ fb:FunctionBody {
+  / modifiers:(MethodModifiers __)? FunctionToken? __ fb:FunctionBody {
       return append({
         type: "function",
         modifiers: extractOptional(modifiers, 0) || [],
         identifier: fb.identifier,
-        returns: extractOptional(returns, 0),
+        generics: fb.generics,
+        args: fb.args,
+        body: fb.block
+      });
+    }
+  / modifiers:(MethodModifiers __)? returns:TypeName __ FunctionToken? __ fb:FunctionBody {
+      return append({
+        type: "function",
+        modifiers: extractOptional(modifiers, 0) || [],
+        identifier: fb.identifier,
+        returns: returns,
         generics: fb.generics,
         args: fb.args,
         body: fb.block
@@ -62,11 +72,19 @@ FunctionArguments "arguments"
   / "(" __ first:FunctionArgument rest:(__ "," __ FunctionArgument)* __ ")" { return buildList(first, rest, 3); }
 
 FunctionArgument "argument"
-  = constant:(ConstToken __)? typename:(TypeName __)? identifier:Identifier value:(__ "=" __ AssignmentExpression)? {
+  = constant:(ConstToken __)? typename:TypeName __ identifier:Identifier value:(__ "=" __ AssignmentExpression)? {
       return append({
         type: "argument",
         constant: constant != null,
-        returns: extractOptional(typename, 0),
+        returns: typename,
+        identifier: identifier,
+        value: extractOptional(value, 3)
+      });
+    }
+  / constant:(ConstToken __)? identifier:Identifier value:(__ "=" __ AssignmentExpression)? {
+      return append({
+        type: "argument",
+        constant: constant != null,
         identifier: identifier,
         value: extractOptional(value, 3)
       });
@@ -82,12 +100,21 @@ FunctionExternStatement
         args: fh.args
       });
     }
-  / modifiers:(PropertyModifiers __)? isof:(TypeName __)? FunctionToken? __ fh:FunctionHead {
+  / modifiers:(PropertyModifiers __)? FunctionToken? __ fh:FunctionHead {
       return append({
         type: "function",
         modifiers: extractOptional(modifiers, 0) || [],
         identifier: fh.identifier,
-        returns: extractOptional(isof, 0),
+        generics: extractOptional(fh.generics, 0),
+        args: fh.args
+      });
+    }
+  / modifiers:(PropertyModifiers __)? isof:TypeName __ FunctionToken? __ fh:FunctionHead {
+      return append({
+        type: "function",
+        modifiers: extractOptional(modifiers, 0) || [],
+        identifier: fh.identifier,
+        returns: isof,
         generics: extractOptional(fh.generics, 0),
         args: fh.args
       });

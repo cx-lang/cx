@@ -9,10 +9,17 @@ DestructorList
     }
 
 DestructorItem
-  = typename:(TypeName __)? key:(Identifier __ "=" __)? property:IdentifierPath {
+  = key:(Identifier __ "=" __)? property:IdentifierPath {
       return append({
         type: "destructor",
-        returns: extractOptional(typename, 0),
+        identifier: extractOptional(key, 0),
+        property: property
+      });
+    }
+  / typename:TypeName __ key:(Identifier __ "=" __)? property:IdentifierPath {
+      return append({
+        type: "destructor",
+        returns: typename,
         identifier: extractOptional(key, 0),
         property: property
       });

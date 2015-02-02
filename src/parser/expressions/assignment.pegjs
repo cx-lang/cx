@@ -3,16 +3,12 @@ KeyExpression
   / NewExpression
 
 AssignmentExpression
-  = left:KeyExpression __ operator:AssignmentOperator __ right:AssignmentExpressionLRF {
+  = left:KeyExpression __ operator:AssignmentOperator __ right:AssignmentExpression {
       return append({ type: "expression", kind: "assignment", left: left, operator: operator, right: right });
     }
-
-// without this fix, PEG.js will report a 'Left recursion' Grammer Error
-AssignmentExpressionLRF
-  = AssignmentExpression
+  / OperatorExpression
   / KeyExpression
   / LambdaExpression
-  / OperatorExpression
 
 AssignmentOperator
   = "="

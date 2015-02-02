@@ -1,14 +1,11 @@
 OperatorExpression
-  = "(" __ typename:TypeName __ ")" __ expression:Expression {
+  = "(" __ typename:TypeName __ ")" __ expression:AssignmentExpression {
       return append({ type: "expression", kind: "cast", returns: typename, expression: expression });
     }
   / TernaryExpression
-  / RelationalExpression
-  / UnaryExpression
-  / UpdateExpression
 
 TernaryExpression
-  = condition:Expression __ "?" __ left:Expression right:(__ ":" __ Expression)? {
+  = condition:RelationalExpression __ "?" __ left:AssignmentExpression right:(__ ":" __ AssignmentExpression)? {
       return append({
         type: "expression",
         kind: "ternary",
@@ -17,3 +14,4 @@ TernaryExpression
         alternate: extractOptional(right, 3)
       });
     }
+  / RelationalExpression

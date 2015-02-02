@@ -1,9 +1,8 @@
 UpdateExpression
-  = left:Expression __ operator:UpdateOperator {
+  = left:KeyExpression __ operator:UpdateOperator {
       return append({ type: "expression", kind: "update", expression: left, operator: operator });
     }
-  / CallExpression
-  / NewExpression
+  / KeyExpression
 
 UpdateOperator
   = "++"

@@ -4,12 +4,14 @@ function getLocation ( position ) {
 }
 
 function append ( ast ) {
-  ast.pos = {
-    filename: options.filename,
-    start: getLocation(peg$reportedPos),
-    end: getLocation(peg$currPos),
-    range: [peg$reportedPos, peg$currPos]
-  };
+  if ( options.appendPos ) {
+    ast.pos = {
+      filename: options.filename,
+      start: getLocation(peg$reportedPos),
+      end: getLocation(peg$currPos),
+      range: [peg$reportedPos, peg$currPos]
+    };
+  }
   return ast;
 }
 
@@ -26,7 +28,7 @@ function extractList ( list, index ) {
 }
 
 function buildList ( first, rest, index ) {
-  return [first].concat(typeof index === 'number' ? extractOptional(rest, index) : rest);
+  return rest ? [first].concat(typeof index === 'number' ? extractList(rest, index) : rest) : [first];
 }
 
 function buildTree ( first, rest, builder ) {

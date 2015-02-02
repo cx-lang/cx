@@ -14,12 +14,15 @@ VariableStatement
     }
 
 VariableDeclarations
-  = __ first:VariableAssignment rest:(__ "," __ VariableAssignment)* EOS {
+  = __ first:VariableAssignment rest:(__ "," __ VariableAssignment)* {
       return buildList(first, rest, 3);
     }
 
-VariableAssignment
-  = Identifier
+VariableAssignment "variable"
+  = identifier:Identifier __ "=" __ value:AssignmentExpression {
+      return append({ type: "variable", identifier: identifier, value: value });
+    }
+  / Identifier
   / AwaitAssignment
   / identifier:Identifier __ "=" __ "{" __ accessor:Accessor __ "}" {
       accessor.identifier = identifier;
@@ -49,7 +52,4 @@ VariableAssignment
         get: accessors[3],
         set: accessors[0]
       });
-    }
-  / identifier:Identifier __ "=" __ value:AssignmentExpression {
-      return append({ type: "variable", identifier: identifier, value: value });
     }

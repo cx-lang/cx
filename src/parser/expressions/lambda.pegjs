@@ -16,7 +16,7 @@ LambdaArrow
       return append({
         type: "lambda",
         kind: "arrow",
-        args: args ? args[0] || [],
+        args: args ? args[0] : [],
         body: statement
       });
     }

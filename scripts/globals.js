@@ -13,7 +13,9 @@ global.buildParser = function ( grammer ) {
   try {
     return "module.exports = " + pegjs.buildParser(grammer, {
       cache: false, output: "source", optimize: "speed", allowedStartRules: ["start"]
-    }) + ";\n";
+    }).replace(
+      'this.message  = message;', 'this.message  = line + ":" + column + ") " + message;'
+    ) + ";\n";
   } catch ( e ) {
     console.error("\n" + e.name + (typeof e.line === 'number' ? " @ " + e.line + ":" + e.column + ") " : ": ") + e.message + "\n");
     process.exit(1);

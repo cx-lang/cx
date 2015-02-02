@@ -13,13 +13,21 @@ PropertyList
 
 PropertyItem
   = IdentifierName
-  / typename:(TypeName __)? key:PropertyName __ ":" __ value:AssignmentExpression {
+  / key:PropertyName __ ":" __ value:AssignmentExpression {
+      return append({
+        type: 'property',
+        kind: 'data',
+        key: key,
+        value: value
+      });
+    }
+  / typename:TypeName __ key:PropertyName __ ":" __ value:AssignmentExpression {
       return append({
         type: 'property',
         kind: 'data',
         key: key,
         value: value,
-        returns: extractOptional(typename, 0)
+        returns: typename
       });
     }
   / GetterProperty

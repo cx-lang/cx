@@ -23,10 +23,15 @@ Catch
     }
 
 CatchArgument "argument"
-  = constant:(ConstToken __)? typename:(TypeName __)? identifier:Identifier {
+  = constant:(ConstToken __)? identifier:Identifier {
       identifier.type = "argument";
       identifier.constant = constant != null;
-      identifier.returns = extractOptional(typename, 0);
+      return append(identifier);
+    }
+  / constant:(ConstToken __)? typename:TypeName __ identifier:Identifier {
+      identifier.type = "argument";
+      identifier.constant = constant != null;
+      identifier.returns = typename;
       return append(identifier);
     }
 

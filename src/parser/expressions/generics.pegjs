@@ -22,10 +22,10 @@ GenericArguments
     }
 
 GenericArgument
-  = identifier:Identifier value:(__ TypeName)? {
+  = identifier:Identifier value:(__ "=" __ TypeName)? {
       return append({
         type: "typedef",
         identifier: identifier,
-        value: extractOptional(value, 1)
+        value: extractOptional(value, 3)
       });
     }

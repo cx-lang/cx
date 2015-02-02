@@ -1,0 +1,22 @@
+// this demonstrates a script that runs at compile time only, with to output after the compiler has run
+
+internal typedef string @ltypes.string
+
+macro class Person {
+  
+  string first
+  string last
+
+  Person ( string f, string l ) {
+    first = f
+    last = l
+  }
+  
+  string get name { return first + last }
+
+}
+
+macro main ( ) {
+  let person = new Person('Futago-za', 'Ryuu')
+  System.print('cx-lang by ' << person.name)
+}

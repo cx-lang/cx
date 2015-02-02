@@ -21,6 +21,7 @@ StructBlock
 
 StructElement
   = UsingStatement
+  / TypedefStatement
   / StructIfStatement
   / OOPVariableStatement
   / OOPGetterStatement
