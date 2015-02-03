@@ -10,6 +10,7 @@ var dirs = {
 };
 
 var examples = [
+  "all-types.cx",
   "macro.cx"
 ];
 

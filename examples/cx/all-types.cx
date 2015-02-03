@@ -1,0 +1,28 @@
+/*
+  
+  this file shows everything cx has to offer, and is used to confirm every peg rule works properly
+
+*/
+
+internal typedef string @ltypes.string
+
+macro class Person {
+  
+  string first
+  string last
+
+  Person ( string f, string l ) {
+    first = f
+    last = l
+  }
+  
+  string get name { return first + last }
+  
+  operator [] ( int i ) { }
+
+}
+
+macro main ( ) {
+  let person = new Person('Futago-za', 'Ryuu')
+  'cx-lang by ' << person.name
+}
